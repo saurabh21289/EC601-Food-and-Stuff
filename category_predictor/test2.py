@@ -1,14 +1,11 @@
 from mrjob.job import MRJob
-from mrjob.protocol import JSONValueProtocol
 
 
 class MRWordFrequencyCount(MRJob):
 
-    # INPUT_PROTOCOL = JSONValueProtocol
-
-    def mapper(self, _, data):
-        yield "longitudes", len(data)
-        yield "latitudes", len(data.split())
+    def mapper(self, _, line):
+        yield "chars", len(line)
+        yield "words", len(line.split())
         yield "lines", 1
 
     def reducer(self, key, values):
