@@ -1,17 +1,3 @@
-# Copyright 2011 Yelp and Contributors
-#
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-# http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
-
 """Use the output from the CategoryPredictor MRJob to predict the
 category of text. This uses a simple naive-bayes model - see
 http://en.wikipedia.org/wiki/Naive_Bayes_classifier for more details.
@@ -21,7 +7,11 @@ from __future__ import with_statement
 
 from flask import Flask, render_template, flash, request
 from wtforms import Form, TextField, TextAreaField, validators, StringField, SubmitField
+import os
+import folium
+import pandas as pd
 
+import numpy as np
 
 import math
 import sys
@@ -127,32 +117,49 @@ class ReviewCategoryClassifier(object):
 
 @app.route("/", methods=['GET', 'POST'])
 def hello_world():
+    input_file = 'category_predictor_merged.json'
+    form = ReusableForm(request.form)
+    print form.errors
+    if request.method == 'POST':
+        food=request.form['food']
+        print food
+        text = food
+        guesses = ReviewCategoryClassifier(input_file).classify(text)
+        best_guesses = sorted(guesses.iteritems(), key=lambda (_, prob): prob, reverse=True)[:7]
 
+        if form.validate():
+            for guess, prob in best_guesses:
+                data = 'Category: "%s" - %.2f%% chance' % (guess, prob * 100)
+                print str(data)
+                flash('Predicted ' + str(data))
+        else:
+                flash('All the form fields are required. ')
+    
+    locations()
+    return render_template('index.html', form=form)
 
-	input_file = 'category_predictor_merged.json'
+def map_locations(lons, lats, names, stars):
 
+    locations = list(zip(lats, lons))
+    popups = ['{}, Rating = {}'.format(name, stars) for name, stars in zip(names, stars)]
 
-	form = ReusableForm(request.form)
+    from folium.plugins import MarkerCluster
 
-	print form.errors
-	if request.method == 'POST':
-			food=request.form['food']
-			print food
+    m = folium.Map(location=[np.mean(lats), np.mean(lons)],
+                      tiles='Cartodb Positron', zoom_start=1)
 
-			text = food
-			guesses = ReviewCategoryClassifier(input_file).classify(text)
-			best_guesses = sorted(guesses.iteritems(), key=lambda (_, prob): prob, reverse=True)[:7]
+    m.add_child(MarkerCluster(locations=locations, popups=popups))
 
-			if form.validate():
-				# Save the comment here.
-				for guess, prob in best_guesses:
-					data = 'Category: "%s" - %.2f%% chance' % (guess, prob * 100)
-					print str(data)
-					flash('Predicted ' + str(data))
-			else:
-				flash('All the form fields are required. ')
+    m.save('1000_MarkerCluster.html')
+    print "Done."
 
-	return render_template('index.html', form=form)
-# return str(data)
+def locations():
+    df = pd.read_csv('D:/Projects/Yelp/dataset/business.csv',  low_memory=False)
+    df2 = df[['latitude', 'longitude', 'name', 'stars']]
+    lons = df2.tail(5).longitude.tolist()
+    lats = df2.tail(5).latitude.tolist()
+    names = df2.tail(5).name.tolist()
+    stars = df2.tail(5).stars.tolist()
+    map_locations(lons, lats, names, stars)
 
 app.run(host='0.0.0.0', port=5002)
