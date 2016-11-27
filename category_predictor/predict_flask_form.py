@@ -134,7 +134,7 @@ def hello_world():
                 flash('Predicted ' + str(data))
         else:
                 flash('All the form fields are required. ')
-    
+
     locations()
     return render_template('index.html', form=form)
 
@@ -154,7 +154,7 @@ def map_locations(lons, lats, names, stars):
     print "Done."
 
 def locations():
-    df = pd.read_csv('D:/Projects/Yelp/dataset/business.csv',  low_memory=False)
+    df = pd.read_csv('../../dataset/business.csv',  low_memory=False)
     df2 = df[['latitude', 'longitude', 'name', 'stars']]
     lons = df2.tail(5).longitude.tolist()
     lats = df2.tail(5).latitude.tolist()
