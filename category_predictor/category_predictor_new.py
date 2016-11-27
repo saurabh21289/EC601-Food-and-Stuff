@@ -55,7 +55,7 @@ class CategoryPredictor(MRJob):
         if data['type'] == 'review':
             yield data['business_id'], ('review', data['text'])
         elif data['type'] == 'business':
-            yield data['business_id'], ('categories', data['categories'], 'stars', 'name', 'latitude', 'longitude')
+            yield data['business_id'], ('categories', data['name'])
 
     def add_categories_to_reviews_reducer(self, business_id, reviews_or_categories):
         """Yield out (category, review) for each category-review

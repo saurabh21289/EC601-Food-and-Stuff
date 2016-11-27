@@ -138,15 +138,15 @@ def hello_world():
     locations()
     return render_template('index.html', form=form)
 
-def map_locations(lons, lats, names, stars):
+def map_locations(lons, lats, names, stars, full_address):
 
     locations = list(zip(lats, lons))
-    popups = ['{}, Rating = {}'.format(name, stars) for name, stars in zip(names, stars)]
+    popups = ['{},\n {},\n Rating = {}'.format(name, full_address, stars) for name, full_address, stars in zip(names, full_address, stars)]
 
     from folium.plugins import MarkerCluster
 
     m = folium.Map(location=[np.mean(lats), np.mean(lons)],
-                      tiles='Cartodb Positron', zoom_start=1)
+                      tiles='Cartodb Positron', zoom_start=3)
 
     m.add_child(MarkerCluster(locations=locations, popups=popups))
 
@@ -155,11 +155,12 @@ def map_locations(lons, lats, names, stars):
 
 def locations():
     df = pd.read_csv('../../dataset/business.csv',  low_memory=False)
-    df2 = df[['latitude', 'longitude', 'name', 'stars']]
-    lons = df2.tail(5).longitude.tolist()
-    lats = df2.tail(5).latitude.tolist()
-    names = df2.tail(5).name.tolist()
-    stars = df2.tail(5).stars.tolist()
-    map_locations(lons, lats, names, stars)
+    df2 = df[['latitude', 'longitude', 'name', 'stars', 'full_address']]
+    lons = df2.head(9).longitude.tolist()
+    lats = df2.head(9).latitude.tolist()
+    names = df2.head(9).name.tolist()
+    stars = df2.head(9).stars.tolist()
+    full_address = df2.head(9).full_address.tolist()
+    map_locations(lons, lats, names, stars, full_address)
 
 app.run(host='0.0.0.0', port=5002)
