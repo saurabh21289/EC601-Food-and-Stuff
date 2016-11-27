@@ -53,9 +53,16 @@ class CategoryPredictor(MRJob):
         (review or category)).
         """
         if data['type'] == 'review':
+            # print data['business_id'], ('review', data['text'])
             yield data['business_id'], ('review', data['text'])
+            # business_id : {review: 'text'}
         elif data['type'] == 'business':
-            yield data['business_id'], ('categories', data['name'])
+            # print (data['business_id'], ('categories', data['categories']))[1][1]
+            # print data['business_id'], ('name', data['name'])
+            yield data['business_id'], ('categories', data['categories'])
+            yield data['business_id'], ('name', data['name'])
+
+            # yield data['business_id'], ('stars', data['stars'])
 
     def add_categories_to_reviews_reducer(self, business_id, reviews_or_categories):
         """Yield out (category, review) for each category-review
@@ -68,7 +75,7 @@ class CategoryPredictor(MRJob):
 
         for data_type, data in reviews_or_categories:
             if data_type == 'review':
-                reviews.append(data)
+                reviews.append(data) #(business_id: (categories|review|name, data[categories|text|name]))
             else:
                 categories = data
 
@@ -81,10 +88,12 @@ class CategoryPredictor(MRJob):
         # Yield out review counts in the same format as the
         # tokenize_reviews_mapper. We'll special case the 'all' key in
         # that method, but afterwards it will be treated the same.
+        # yield 'all', dict((cat, len(reviews)) for cat in categories)
         yield 'all', dict((cat, len(reviews)) for cat in categories)
-
         for category in categories:
-            for review in reviews:
+            # print category
+            for review in reviews: #data['text']
+                # print category, review
                 yield category, review
 
     def tokenize_reviews_mapper(self, category, review):
@@ -96,6 +105,7 @@ class CategoryPredictor(MRJob):
         # special case - pass through category counts (which are
         # already formatted like the output of this mapper)
         if category == 'all':
+            print "test"
             yield category, review
             return
 
@@ -104,7 +114,7 @@ class CategoryPredictor(MRJob):
             counts[word] = counts.get(word, 0) + 1
             print counts[word]
 
-        yield category, counts
+        yield category, counts #data[categories])
 
     def sum_counts(self, category, counts):
         """Sum up dictionaries of counts, filter out rare words

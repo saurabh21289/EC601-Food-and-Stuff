@@ -5,7 +5,7 @@ http://en.wikipedia.org/wiki/Naive_Bayes_classifier for more details.
 
 from __future__ import with_statement
 
-from flask import Flask, render_template, flash, request
+from flask import Flask, render_template, flash, request, Markup
 from wtforms import Form, TextField, TextAreaField, validators, StringField, SubmitField
 import os
 import folium
@@ -114,6 +114,8 @@ class ReviewCategoryClassifier(object):
 		total = sum(scores.itervalues())
 		return dict((cat, prob / total) for cat, prob in scores.iteritems())
 
+list1 = []
+values1 =[]
 
 @app.route("/", methods=['GET', 'POST'])
 def hello_world():
@@ -125,18 +127,33 @@ def hello_world():
         print food
         text = food
         guesses = ReviewCategoryClassifier(input_file).classify(text)
-        best_guesses = sorted(guesses.iteritems(), key=lambda (_, prob): prob, reverse=True)[:7]
-
+        best_guesses = sorted(guesses.iteritems(), key=lambda (_, prob): prob, reverse=True)[0:8]
+        del list1[:]
+        del values1[:]
         if form.validate():
             for guess, prob in best_guesses:
                 data = 'Category: "%s" - %.2f%% chance' % (guess, prob * 100)
                 print str(data)
+                list1.append(guess)
+                values1.append(round(prob * 100,2)) #round(prob*100,2), '%'
                 flash('Predicted ' + str(data))
         else:
                 flash('All the form fields are required. ')
 
     locations()
     return render_template('index.html', form=form)
+
+@app.route("/chart")
+def chart():
+    labels = ["January","February","March","April","May","June","July","August"]
+    values = [10,9,8,7,6,4,7,8]
+    colors = [ "#F7464A", "#46BFBD", "#FDB45C", "#FEDCBA","#ABCDEF", "#DDDDDD", "#ABCABC"  ]
+    return render_template('chart.html', set=zip(values1, list1, colors))
+
+@app.route("/mapdisplay")
+def mapdisplay():
+    return render_template('map.html')
+
 
 def map_locations(lons, lats, names, stars, full_address):
 
@@ -150,7 +167,7 @@ def map_locations(lons, lats, names, stars, full_address):
 
     m.add_child(MarkerCluster(locations=locations, popups=popups))
 
-    m.save('1000_MarkerCluster.html')
+    m.save('map.html')
     print "Done."
 
 def locations():
@@ -163,4 +180,4 @@ def locations():
     full_address = df2.head(9).full_address.tolist()
     map_locations(lons, lats, names, stars, full_address)
 
-app.run(host='0.0.0.0', port=5002)
+app.run(host='0.0.0.0', port=5003)
