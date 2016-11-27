@@ -1,0 +1,407 @@
+
+        <!DOCTYPE html>
+        <head>
+            
+        
+            <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+        
+            
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.js"></script>
+        
+        
+        
+            
+        
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        
+        
+        
+            
+        
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+        
+        
+        
+            
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.min.js"></script>
+        
+        
+        
+            
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.4.0/leaflet.markercluster-src.js"></script>
+        
+        
+        
+            
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.4.0/leaflet.markercluster.js"></script>
+        
+        
+        
+            
+        
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.css" />
+        
+        
+        
+            
+        
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+        
+        
+        
+            
+        
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css" />
+        
+        
+        
+            
+        
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" />
+        
+        
+        
+            
+        
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css" />
+        
+        
+        
+            
+        
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.4.0/MarkerCluster.Default.css" />
+        
+        
+        
+            
+        
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.4.0/MarkerCluster.css" />
+        
+        
+        
+            
+        
+            <link rel="stylesheet" href="https://raw.githubusercontent.com/python-visualization/folium/master/folium/templates/leaflet.awesome.rotate.css" />
+        
+        
+        
+            
+            <style>
+
+            html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+                }
+
+            #map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+            
+        
+            
+            <style> #map_e97f19ad5a8943f48586a3d7a5bc791d {
+                position : relative;
+                width : 100.0%;
+                height: 100.0%;
+                left: 0.0%;
+                top: 0.0%;
+                }
+            </style>
+        
+        
+            
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.4.0/leaflet.markercluster.js"></script>
+        
+        
+        
+            
+        
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.4.0/MarkerCluster.css" />
+        
+        
+        
+            
+        
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.4.0/MarkerCluster.Default.css" />
+        
+        
+        
+        
+        </head>
+        <body>
+            
+        
+            
+            <div class="folium-map" id="map_e97f19ad5a8943f48586a3d7a5bc791d" ></div>
+        
+        
+        
+        </body>
+        <script>
+            
+        
+            
+
+            var southWest = L.latLng(-90, -180);
+            var northEast = L.latLng(90, 180);
+            var bounds = L.latLngBounds(southWest, northEast);
+
+            var map_e97f19ad5a8943f48586a3d7a5bc791d = L.map('map_e97f19ad5a8943f48586a3d7a5bc791d', {
+                                           center:[40.3881097889,-79.9825368889],
+                                           zoom: 3,
+                                           maxBounds: bounds,
+                                           layers: [],
+                                           crs: L.CRS.EPSG3857
+                                         });
+            
+        
+        
+            
+            var tile_layer_82e58df1cb1b4b499d190a05dfc0f7ab = L.tileLayer(
+                'https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png',
+                {
+                    maxZoom: 18,
+                    minZoom: 1,
+                    attribution: '(c) <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors (c) <a href="http://cartodb.com/attributions">CartoDB</a>, CartoDB <a href ="http://cartodb.com/attributions">attributions</a>',
+                    detectRetina: false
+                    }
+                ).addTo(map_e97f19ad5a8943f48586a3d7a5bc791d);
+
+        
+        
+            
+                var marker_cluster_0cc41de555ee4d848615dedbcdde577e = L.markerClusterGroup();
+                map_e97f19ad5a8943f48586a3d7a5bc791d.addLayer(marker_cluster_0cc41de555ee4d848615dedbcdde577e);
+            
+        
+            
+
+            var marker_0b354788d60d48f89141c9511c7cafbf = L.marker(
+                [40.3543266,-79.9007057],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(marker_cluster_0cc41de555ee4d848615dedbcdde577e);
+            
+        
+            
+            var popup_160a50d438aa4ec1a9b3a4a70259ce56 = L.popup({maxWidth: '300'});
+
+            
+                var html_f8a5b9a02c4e451c9a857d90b9c8d7fc = $('         <div id="html_f8a5b9a02c4e451c9a857d90b9c8d7fc"                 style="width: 100.0%; height: 100.0%;">                 Mr Hoagie,  4734 Lebanon Church Rd Dravosburg, PA 15034,  Rating = 3.5</div>                 ')[0];
+                popup_160a50d438aa4ec1a9b3a4a70259ce56.setContent(html_f8a5b9a02c4e451c9a857d90b9c8d7fc);
+            
+
+            marker_0b354788d60d48f89141c9511c7cafbf.bindPopup(popup_160a50d438aa4ec1a9b3a4a70259ce56);
+
+            
+        
+        
+            
+
+            var marker_5c89be87c7b04108a28583ff1e9ece28 = L.marker(
+                [40.3505527,-79.8868138],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(marker_cluster_0cc41de555ee4d848615dedbcdde577e);
+            
+        
+            
+            var popup_2eaa0fa161aa43f1880c4f7f2c2373fa = L.popup({maxWidth: '300'});
+
+            
+                var html_bc1b70bd1a384661a0ffb3f0cedf3f79 = $('         <div id="html_bc1b70bd1a384661a0ffb3f0cedf3f79"                 style="width: 100.0%; height: 100.0%;">                 Clancy&#39;s Pub,  202 McClure St Dravosburg, PA 15034,  Rating = 3.0</div>                 ')[0];
+                popup_2eaa0fa161aa43f1880c4f7f2c2373fa.setContent(html_bc1b70bd1a384661a0ffb3f0cedf3f79);
+            
+
+            marker_5c89be87c7b04108a28583ff1e9ece28.bindPopup(popup_2eaa0fa161aa43f1880c4f7f2c2373fa);
+
+            
+        
+        
+            
+
+            var marker_a5c57205880e49659aaaea01b6374fa9 = L.marker(
+                [40.3541155,-80.0146597],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(marker_cluster_0cc41de555ee4d848615dedbcdde577e);
+            
+        
+            
+            var popup_713035f1fc5d4cd691d1ae4a386fadbc = L.popup({maxWidth: '300'});
+
+            
+                var html_28560143103c49f0922f4ff54c43bafa = $('         <div id="html_28560143103c49f0922f4ff54c43bafa"                 style="width: 100.0%; height: 100.0%;">                 Cool Springs Golf Center,  1530 Hamilton Rd Bethel Park, PA 15234,  Rating = 2.5</div>                 ')[0];
+                popup_713035f1fc5d4cd691d1ae4a386fadbc.setContent(html_28560143103c49f0922f4ff54c43bafa);
+            
+
+            marker_a5c57205880e49659aaaea01b6374fa9.bindPopup(popup_713035f1fc5d4cd691d1ae4a386fadbc);
+
+            
+        
+        
+            
+
+            var marker_28b815ff1a5643a3ab823b44f0873647 = L.marker(
+                [40.4088301,-79.8662107],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(marker_cluster_0cc41de555ee4d848615dedbcdde577e);
+            
+        
+            
+            var popup_b3a345190cbf4311abf83806ee88121b = L.popup({maxWidth: '300'});
+
+            
+                var html_9982b48906004a628b7ca1e7d0696e53 = $('         <div id="html_9982b48906004a628b7ca1e7d0696e53"                 style="width: 100.0%; height: 100.0%;">                 Emil&#39;s Lounge,  414 Hawkins Ave Braddock, PA 15104,  Rating = 4.5</div>                 ')[0];
+                popup_b3a345190cbf4311abf83806ee88121b.setContent(html_9982b48906004a628b7ca1e7d0696e53);
+            
+
+            marker_28b815ff1a5643a3ab823b44f0873647.bindPopup(popup_b3a345190cbf4311abf83806ee88121b);
+
+            
+        
+        
+            
+
+            var marker_731279b447884c5fa878d3e33f99aaca = L.marker(
+                [40.4034049,-79.8557821],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(marker_cluster_0cc41de555ee4d848615dedbcdde577e);
+            
+        
+            
+            var popup_dea465bbfaec4ed389e3d727b80adbb2 = L.popup({maxWidth: '300'});
+
+            
+                var html_df06aaca306d4d4dade28a4ee5757f7f = $('         <div id="html_df06aaca306d4d4dade28a4ee5757f7f"                 style="width: 100.0%; height: 100.0%;">                 Grand View Golf Club,  1000 Clubhouse Dr Braddock, PA 15104,  Rating = 5.0</div>                 ')[0];
+                popup_dea465bbfaec4ed389e3d727b80adbb2.setContent(html_df06aaca306d4d4dade28a4ee5757f7f);
+            
+
+            marker_731279b447884c5fa878d3e33f99aaca.bindPopup(popup_dea465bbfaec4ed389e3d727b80adbb2);
+
+            
+        
+        
+            
+
+            var marker_870d23d8c485406d8b2ff48b3cec1e9c = L.marker(
+                [40.4154859,-80.0675491],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(marker_cluster_0cc41de555ee4d848615dedbcdde577e);
+            
+        
+            
+            var popup_ff757776718f4b6bb524caaa784acfc3 = L.popup({maxWidth: '300'});
+
+            
+                var html_006dd5b6da474d448cb6e16f5e0f7b35 = $('         <div id="html_006dd5b6da474d448cb6e16f5e0f7b35"                 style="width: 100.0%; height: 100.0%;">                 Alexion&#39;s Bar &amp; Grill,  141 Hawthorne St Greentree Carnegie, PA 15106,  Rating = 4.0</div>                 ')[0];
+                popup_ff757776718f4b6bb524caaa784acfc3.setContent(html_006dd5b6da474d448cb6e16f5e0f7b35);
+            
+
+            marker_870d23d8c485406d8b2ff48b3cec1e9c.bindPopup(popup_ff757776718f4b6bb524caaa784acfc3);
+
+            
+        
+        
+            
+
+            var marker_e0f0cd58afc2484297c22d4d27c3cacd = L.marker(
+                [40.394588,-80.0844539],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(marker_cluster_0cc41de555ee4d848615dedbcdde577e);
+            
+        
+            
+            var popup_e7a1f9359ffe4853933db1dce480f3fa = L.popup({maxWidth: '300'});
+
+            
+                var html_dc73f3a0a0ec47f0ab6c45cefc957605 = $('         <div id="html_dc73f3a0a0ec47f0ab6c45cefc957605"                 style="width: 100.0%; height: 100.0%;">                 Flynn&#39;s Tire &amp; Auto Service,  718A Hope Hollow Rd Carnegie, PA 15106,  Rating = 2.5</div>                 ')[0];
+                popup_e7a1f9359ffe4853933db1dce480f3fa.setContent(html_dc73f3a0a0ec47f0ab6c45cefc957605);
+            
+
+            marker_e0f0cd58afc2484297c22d4d27c3cacd.bindPopup(popup_e7a1f9359ffe4853933db1dce480f3fa);
+
+            
+        
+        
+            
+
+            var marker_901130b60fde40068c8e579dce1f5880 = L.marker(
+                [40.4054039,-80.0762665],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(marker_cluster_0cc41de555ee4d848615dedbcdde577e);
+            
+        
+            
+            var popup_2023bb6074134767b62a88017366fc17 = L.popup({maxWidth: '300'});
+
+            
+                var html_fce77436f5a64dbeaa1fca103fee748c = $('         <div id="html_fce77436f5a64dbeaa1fca103fee748c"                 style="width: 100.0%; height: 100.0%;">                 Forsythe Miniature Golf &amp; Snacks,  920 Forsythe Rd Carnegie Carnegie, PA 15106,  Rating = 4.0</div>                 ')[0];
+                popup_2023bb6074134767b62a88017366fc17.setContent(html_fce77436f5a64dbeaa1fca103fee748c);
+            
+
+            marker_901130b60fde40068c8e579dce1f5880.bindPopup(popup_2023bb6074134767b62a88017366fc17);
+
+            
+        
+        
+            
+
+            var marker_6c5b8a47b0f2492b976455a444272f8d = L.marker(
+                [40.4062805,-80.0903905],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(marker_cluster_0cc41de555ee4d848615dedbcdde577e);
+            
+        
+            
+            var popup_631e0984030943dab9abbe0e12d71086 = L.popup({maxWidth: '300'});
+
+            
+                var html_17f0022bece84551ae7b8b0ba8a059ce = $('         <div id="html_17f0022bece84551ae7b8b0ba8a059ce"                 style="width: 100.0%; height: 100.0%;">                 Quaker State Construction,  8 Logan St Carnegie Carnegie, PA 15106,  Rating = 2.5</div>                 ')[0];
+                popup_631e0984030943dab9abbe0e12d71086.setContent(html_17f0022bece84551ae7b8b0ba8a059ce);
+            
+
+            marker_6c5b8a47b0f2492b976455a444272f8d.bindPopup(popup_631e0984030943dab9abbe0e12d71086);
+
+            
+        
+        
+        
+        </script>
+        

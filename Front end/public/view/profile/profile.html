@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <link href="../../css/profile.css" rel="stylesheet" />
+</head>
+<body>
+    <h1>Profile</h1>
+    <div ng-show="currentUser.roles.indexOf('admin')> -1">
+        <h2>Admin</h2>
+        <table class="table table-striped">
+            <tr ng-repeat="user in users">
+                <td>{{user.username}}</td>
+                <td>{{user.password}}</td>
+            </tr>
+        </table>
+    </div>
+
+    <div ng-show="currentUser.roles.indexOf('student')> -1">
+        <h2>Student</h2>
+    </div>
+</body>
+</html>
+<h1>Search</h1>
+<div class="container-fluid">
+    <form>
+        <div class="form-group">
+            <input type="text" class="form-control" id="keyWord" placeholder="Please type key word you want to search">
+        </div>
+        <a ng-click="" class="btn btn-info btn-block">Go</a>
+    </form>
+</div>
+
+<br/>
+
+<div class="container-fluid">
+    <table id="customers" class="table table-bordered">
+        <thead>
+        <tr class="info">
+            <th>Food</th>
+            <th>Address</th>
+            <th>Rating</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr class="warning">
+            <td>sssssssssssss</td>
+            <td>罗斯福</td>
+            <td>sssss</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
