@@ -153,6 +153,7 @@ def chart():
     labels = ["January","February","March","April","May","June","July","August"]
     values = [10,9,8,7,6,4,7,8]
     colors = [ "#F7464A", "#46BFBD", "#FDB45C", "#FEDCBA","#ABCDEF", "#DDDDDD", "#ABCABC"  ]
+    # print "test"
     return render_template('chart.html', set=zip(values1, list1, colors))
 
 @app.route("/map")
@@ -165,12 +166,14 @@ def get_my_ip():
     # return "Hi there!"
     # ip_address = request.remote_addr
     # print "ip = " + ip_address
-    # r = requests.get('http://freegeoip.net/json/' + 'ip_address')
+    # r = requests.get('http://freegeoip.net/json/' + str(ip_address))
     # print r.json()
-    # return jsonify({'ip': request.remote_addr}), 200
+    return jsonify({'ip': request.remote_addr}), 200
     # # return jsonify({'ip': request.remote_addr}), 200
 
+
 def map_locations(lons, lats, names, stars, full_address):
+
     locations = list(zip(lats, lons))
     popups = ['{},\n {},\n Rating = {}'.format(name, full_address, stars) for name, full_address, stars in zip(names, full_address, stars)]
 
