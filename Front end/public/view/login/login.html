@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <link href="../../css/login.css" rel="stylesheet" />
+
+</head>
+<body>
+
+    <div class="container">
+        <form class="form-signin">
+            <h2 class="form-signin-heading">Please Login</h2>
+                <label for="username">Email / Username</label>
+                <input ng-model="user.username" type="text" id="inputUsername" class="form-control ng-pristine ng-invalid ng-invalid-required ng-touched" placeholder="Username" required="" autofocus="">
+                <label for="password">Password</label>
+                <input ng-model="user.password" type="password" id="inputPassword" class="form-control ng-pristine ng-untouched ng-invalid ng-invalid-required" placeholder="Password" required="">
+                <button ng-click="login(user)" class="btn btn-info btn-block" type="submit">Log in</button>
+        </form>
+    </div>
+    <!-- /container -->
+
+
+</body>
+</html>

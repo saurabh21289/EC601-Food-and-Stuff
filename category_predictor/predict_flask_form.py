@@ -152,8 +152,8 @@ def chart():
     colors = [ "#F7464A", "#46BFBD", "#FDB45C", "#FEDCBA","#ABCDEF", "#DDDDDD", "#ABCABC"  ]
     return render_template('chart.html', set=zip(values1, list1, colors))
 
-@app.route("/mapdisplay")
-def mapdisplay():
+@app.route("/map")
+def map():
     return render_template('map.html')
 
 @app.route("/get_my_ip", methods=["GET"])
@@ -174,7 +174,7 @@ def map_locations(lons, lats, names, stars, full_address):
 
     m.add_child(MarkerCluster(locations=locations, popups=popups))
 
-    m.save('map.html')
+    m.save('templates/map.html')
     print "Done."
 
 def locations():
@@ -187,4 +187,4 @@ def locations():
     full_address = df2.head(9).full_address.tolist()
     map_locations(lons, lats, names, stars, full_address)
 
-app.run(host='0.0.0.0', port=5003)
+app.run(host='0.0.0.0', port=5002)

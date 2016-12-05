@@ -26,9 +26,12 @@
   <br>
         {% with messages = get_flashed_messages(with_categories=true) %}
             {% if messages %}
-            <iframe id="frame1" src="chart" height="450" width="600" style="border:none;" align="middle"></iframe>
-            <iframe id="frame2" src="map" height="450" width="600" style="border:none;" align="middle"></iframe>
+            <div class="embed-responsive embed-responsive-16by9">
+              <iframe id="frame1" class="embed-responsive-item" src="chart"  style="border:none;" align="middle" scrolling="no"></iframe>
+              <iframe id="frame2" class="embed-responsive-item" src="map"  style="border:none;" align="middle" scrolling="yes"></iframe>
+            </div>
 
+            <br>
         {% for message in messages %}
             {% if "Error" not in message[1]: %}
                 <div class="alert alert-info">
