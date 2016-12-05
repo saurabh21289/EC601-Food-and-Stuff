@@ -7,6 +7,9 @@ from __future__ import with_statement
 
 from flask import Flask, render_template, flash, request, Markup
 from wtforms import Form, TextField, TextAreaField, validators, StringField, SubmitField
+
+from random import randint
+
 import os
 import folium
 import pandas as pd
@@ -128,6 +131,7 @@ def hello_world():
         text = food
         guesses = ReviewCategoryClassifier(input_file).classify(text)
         best_guesses = sorted(guesses.iteritems(), key=lambda (_, prob): prob, reverse=True)[0:8]
+        locations(best_guesses)
         del list1[:]
         del values1[:]
         if form.validate():
@@ -140,7 +144,7 @@ def hello_world():
         else:
                 flash('All the form fields are required. ')
 
-    locations()
+    # locations()
     return render_template('index.html', form=form)
 
 @app.route("/chart")
@@ -170,14 +174,16 @@ def map_locations(lons, lats, names, stars, full_address):
     m.save('templates/map.html')
     print "Done."
 
-def locations():
+def locations(best_guesses):
     df = pd.read_csv('../../dataset/business.csv',  low_memory=False)
-    df2 = df[['latitude', 'longitude', 'name', 'stars', 'full_address']]
-    lons = df2.head(9).longitude.tolist()
-    lats = df2.head(9).latitude.tolist()
-    names = df2.head(9).name.tolist()
-    stars = df2.head(9).stars.tolist()
-    full_address = df2.head(9).full_address.tolist()
+    df_test = df[df['stars'] > 3.0]
+    df2 = df_test[['latitude', 'longitude', 'name', 'stars', 'full_address']]
+    lons = df2.head(10).longitude.tolist()
+    lats = df2.head(10).latitude.tolist()
+    names = df2.head(10).name.tolist()
+    stars = df2.head(10).stars.tolist()
+    full_address = df2.head(10).full_address.tolist()
+    print "Best guess = " + best_guesses[0][0]
     map_locations(lons, lats, names, stars, full_address)
 
 app.run(host='0.0.0.0', port=5002)
