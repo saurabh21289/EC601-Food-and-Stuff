@@ -11,6 +11,8 @@ import os
 import folium
 import pandas as pd
 
+from flask import jsonify
+
 import numpy as np
 
 import math
@@ -154,6 +156,11 @@ def chart():
 def mapdisplay():
     return render_template('map.html')
 
+@app.route("/get_my_ip", methods=["GET"])
+def get_my_ip():
+    print "IP Address = " + request.remote_addr
+    return "Hi there!"
+    # return jsonify({'ip': request.remote_addr}), 200
 
 def map_locations(lons, lats, names, stars, full_address):
 
