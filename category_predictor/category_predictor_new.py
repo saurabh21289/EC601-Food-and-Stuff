@@ -114,7 +114,8 @@ class CategoryPredictor(MRJob):
             counts[word] = counts.get(word, 0) + 1
             print counts[word]
 
-        yield category, counts #data[categories])
+        yield category, counts
+        #data[categories]), dictionary
 
     def sum_counts(self, category, counts):
         """Sum up dictionaries of counts, filter out rare words
