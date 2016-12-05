@@ -20,6 +20,9 @@ import sys
 
 import category_predictor
 
+import requests
+
+
 # App config.
 # DEBUG = True
 app = Flask(__name__)
@@ -156,14 +159,18 @@ def chart():
 def map():
     return render_template('map.html')
 
-@app.route("/get_my_ip", methods=["GET"])
+@app.route("/ip", methods=["GET"])
 def get_my_ip():
-    print "IP Address = " + request.remote_addr
-    return "Hi there!"
+    # print "IP Address = " + request.remote_addr
+    # return "Hi there!"
+    # ip_address = request.remote_addr
+    # print "ip = " + ip_address
+    # r = requests.get('http://freegeoip.net/json/' + 'ip_address')
+    # print r.json()
     # return jsonify({'ip': request.remote_addr}), 200
+    # # return jsonify({'ip': request.remote_addr}), 200
 
 def map_locations(lons, lats, names, stars, full_address):
-
     locations = list(zip(lats, lons))
     popups = ['{},\n {},\n Rating = {}'.format(name, full_address, stars) for name, full_address, stars in zip(names, full_address, stars)]
 
