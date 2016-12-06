@@ -110,19 +110,7 @@
             
         
             
-<<<<<<< HEAD
-            <style> #map_c228c136966f466ba4dbf3976819c228 {
-=======
-<<<<<<< HEAD
-            <style> #map_9b138b1f6c084620b30761ec96c12282 {
-=======
-<<<<<<< HEAD:category_predictor/map.html
-            <style> #map_e6b17f828583405e8f8b2d2787836ade {
-=======
-            <style> #map_e97f19ad5a8943f48586a3d7a5bc791d {
->>>>>>> origin/master:category_predictor/templates/map.html
->>>>>>> origin/master
->>>>>>> origin/master
+            <style> #map_7751112d97ee4d348a9a757747f2009c {
                 position : relative;
                 width : 100.0%;
                 height: 100.0%;
@@ -156,19 +144,7 @@
             
         
             
-<<<<<<< HEAD
-            <div class="folium-map" id="map_c228c136966f466ba4dbf3976819c228" ></div>
-=======
-<<<<<<< HEAD
-            <div class="folium-map" id="map_9b138b1f6c084620b30761ec96c12282" ></div>
-=======
-<<<<<<< HEAD:category_predictor/map.html
-            <div class="folium-map" id="map_e6b17f828583405e8f8b2d2787836ade" ></div>
-=======
-            <div class="folium-map" id="map_e97f19ad5a8943f48586a3d7a5bc791d" ></div>
->>>>>>> origin/master:category_predictor/templates/map.html
->>>>>>> origin/master
->>>>>>> origin/master
+            <div class="folium-map" id="map_7751112d97ee4d348a9a757747f2009c" ></div>
         
         
         
@@ -182,21 +158,8 @@
             var northEast = L.latLng(90, 180);
             var bounds = L.latLngBounds(southWest, northEast);
 
-<<<<<<< HEAD
-            var map_c228c136966f466ba4dbf3976819c228 = L.map('map_c228c136966f466ba4dbf3976819c228', {
-=======
-<<<<<<< HEAD
-            var map_9b138b1f6c084620b30761ec96c12282 = L.map('map_9b138b1f6c084620b30761ec96c12282', {
+            var map_7751112d97ee4d348a9a757747f2009c = L.map('map_7751112d97ee4d348a9a757747f2009c', {
                                            center:[40.39598782,-80.01903961],
-=======
-<<<<<<< HEAD:category_predictor/map.html
-            var map_e6b17f828583405e8f8b2d2787836ade = L.map('map_e6b17f828583405e8f8b2d2787836ade', {
-=======
-            var map_e97f19ad5a8943f48586a3d7a5bc791d = L.map('map_e97f19ad5a8943f48586a3d7a5bc791d', {
->>>>>>> origin/master:category_predictor/templates/map.html
->>>>>>> origin/master
-                                           center:[40.3881097889,-79.9825368889],
->>>>>>> origin/master
                                            zoom: 3,
                                            maxBounds: bounds,
                                            layers: [],
@@ -206,19 +169,7 @@
         
         
             
-<<<<<<< HEAD
-            var tile_layer_d0a2f73b8fd8419a97638047bfb90cad = L.tileLayer(
-=======
-<<<<<<< HEAD
-            var tile_layer_c4079b47ce4841c3b08e7635d9eb03e7 = L.tileLayer(
-=======
-<<<<<<< HEAD:category_predictor/map.html
-            var tile_layer_a6de0ef861e04353b3b1930b6dbaf8fb = L.tileLayer(
-=======
-            var tile_layer_82e58df1cb1b4b499d190a05dfc0f7ab = L.tileLayer(
->>>>>>> origin/master:category_predictor/templates/map.html
->>>>>>> origin/master
->>>>>>> origin/master
+            var tile_layer_f4146dfdae6e40b286e68f9c35db63fa = L.tileLayer(
                 'https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png',
                 {
                     maxZoom: 18,
@@ -226,715 +177,251 @@
                     attribution: '(c) <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors (c) <a href="http://cartodb.com/attributions">CartoDB</a>, CartoDB <a href ="http://cartodb.com/attributions">attributions</a>',
                     detectRetina: false
                     }
-<<<<<<< HEAD
-                ).addTo(map_c228c136966f466ba4dbf3976819c228);
-=======
-<<<<<<< HEAD
-                ).addTo(map_9b138b1f6c084620b30761ec96c12282);
-=======
-<<<<<<< HEAD:category_predictor/map.html
-                ).addTo(map_e6b17f828583405e8f8b2d2787836ade);
-=======
-                ).addTo(map_e97f19ad5a8943f48586a3d7a5bc791d);
->>>>>>> origin/master:category_predictor/templates/map.html
->>>>>>> origin/master
->>>>>>> origin/master
+                ).addTo(map_7751112d97ee4d348a9a757747f2009c);
 
         
         
             
-<<<<<<< HEAD
-                var marker_cluster_5956488234ce4a56ad7134dc6dbe7821 = L.markerClusterGroup();
-                map_c228c136966f466ba4dbf3976819c228.addLayer(marker_cluster_5956488234ce4a56ad7134dc6dbe7821);
-=======
-<<<<<<< HEAD
-                var marker_cluster_117d894f5c4d41009115779439782f77 = L.markerClusterGroup();
-                map_9b138b1f6c084620b30761ec96c12282.addLayer(marker_cluster_117d894f5c4d41009115779439782f77);
-=======
-<<<<<<< HEAD:category_predictor/map.html
-                var marker_cluster_563f6251c99a4f2290ee7920f13ff89c = L.markerClusterGroup();
-                map_e6b17f828583405e8f8b2d2787836ade.addLayer(marker_cluster_563f6251c99a4f2290ee7920f13ff89c);
-=======
-                var marker_cluster_0cc41de555ee4d848615dedbcdde577e = L.markerClusterGroup();
-                map_e97f19ad5a8943f48586a3d7a5bc791d.addLayer(marker_cluster_0cc41de555ee4d848615dedbcdde577e);
->>>>>>> origin/master:category_predictor/templates/map.html
->>>>>>> origin/master
->>>>>>> origin/master
+                var marker_cluster_2d06be313a914a55a4be0e57487fc23d = L.markerClusterGroup();
+                map_7751112d97ee4d348a9a757747f2009c.addLayer(marker_cluster_2d06be313a914a55a4be0e57487fc23d);
             
         
             
 
-<<<<<<< HEAD
-            var marker_528754b47f5e4c459940fe31d954f65b = L.marker(
-=======
-<<<<<<< HEAD
-            var marker_ccdb895d0bfa4cb29fd309e7688fe477 = L.marker(
-=======
-<<<<<<< HEAD:category_predictor/map.html
-            var marker_f6f2593f6b6247cd9cd14cdb49d123fb = L.marker(
-=======
-            var marker_0b354788d60d48f89141c9511c7cafbf = L.marker(
->>>>>>> origin/master:category_predictor/templates/map.html
->>>>>>> origin/master
->>>>>>> origin/master
+            var marker_4cb0c2967093432a906e3d1330bd85cd = L.marker(
                 [40.3543266,-79.9007057],
                 {
                     icon: new L.Icon.Default()
                     }
                 )
-<<<<<<< HEAD
-                .addTo(marker_cluster_5956488234ce4a56ad7134dc6dbe7821);
-=======
-<<<<<<< HEAD
-                .addTo(marker_cluster_117d894f5c4d41009115779439782f77);
-=======
-<<<<<<< HEAD:category_predictor/map.html
-                .addTo(marker_cluster_563f6251c99a4f2290ee7920f13ff89c);
->>>>>>> origin/master
+                .addTo(marker_cluster_2d06be313a914a55a4be0e57487fc23d);
             
         
             
-            var popup_99d4c365586d4c1bbef37540518ba7a6 = L.popup({maxWidth: '300'});
+            var popup_50edc4bfdb0442c38af4abe5a372b569 = L.popup({maxWidth: '300'});
 
             
-                var html_3d2ad6b8c68446a59d65414291406025 = $('         <div id="html_3d2ad6b8c68446a59d65414291406025"                 style="width: 100.0%; height: 100.0%;">                 Mr Hoagie,  4734 Lebanon Church Rd Dravosburg, PA 15034,  Rating = 3.5</div>                 ')[0];
-                popup_99d4c365586d4c1bbef37540518ba7a6.setContent(html_3d2ad6b8c68446a59d65414291406025);
+                var html_d1177883ec294a509bd5c3535b22c4bb = $('         <div id="html_d1177883ec294a509bd5c3535b22c4bb"                 style="width: 100.0%; height: 100.0%;">                 Mr Hoagie,  4734 Lebanon Church Rd Dravosburg, PA 15034,  Rating = 3.5</div>                 ')[0];
+                popup_50edc4bfdb0442c38af4abe5a372b569.setContent(html_d1177883ec294a509bd5c3535b22c4bb);
             
 
-<<<<<<< HEAD
-            marker_528754b47f5e4c459940fe31d954f65b.bindPopup(popup_99d4c365586d4c1bbef37540518ba7a6);
-=======
-            marker_f6f2593f6b6247cd9cd14cdb49d123fb.bindPopup(popup_e86b76aaa9404b46801fe550a54ade64);
-=======
-                .addTo(marker_cluster_0cc41de555ee4d848615dedbcdde577e);
->>>>>>> origin/master
-            
-        
-            
-            var popup_848f0dc93bda4a95a1f69eac1b940600 = L.popup({maxWidth: '300'});
-
-            
-                var html_e2a21f62a6a644d9bb327246ec2234d7 = $('         <div id="html_e2a21f62a6a644d9bb327246ec2234d7"                 style="width: 100.0%; height: 100.0%;">                 Mr Hoagie,  4734 Lebanon Church Rd Dravosburg, PA 15034,  Rating = 3.5</div>                 ')[0];
-                popup_848f0dc93bda4a95a1f69eac1b940600.setContent(html_e2a21f62a6a644d9bb327246ec2234d7);
-            
-
-<<<<<<< HEAD
-            marker_ccdb895d0bfa4cb29fd309e7688fe477.bindPopup(popup_848f0dc93bda4a95a1f69eac1b940600);
-=======
-            marker_0b354788d60d48f89141c9511c7cafbf.bindPopup(popup_160a50d438aa4ec1a9b3a4a70259ce56);
->>>>>>> origin/master:category_predictor/templates/map.html
->>>>>>> origin/master
->>>>>>> origin/master
+            marker_4cb0c2967093432a906e3d1330bd85cd.bindPopup(popup_50edc4bfdb0442c38af4abe5a372b569);
 
             
         
         
             
 
-<<<<<<< HEAD
-            var marker_859093dbb48a4b4c8d64e7eeba06dbf9 = L.marker(
-=======
-<<<<<<< HEAD
-            var marker_3de1abcfc026407fa6aa0ec45faee90c = L.marker(
+            var marker_e71e6271212a43f4b25442c6dc7747a9 = L.marker(
                 [40.4088301,-79.8662107],
-=======
-<<<<<<< HEAD:category_predictor/map.html
-            var marker_edd2817080b8486196e280ed46f721e8 = L.marker(
-=======
-            var marker_5c89be87c7b04108a28583ff1e9ece28 = L.marker(
->>>>>>> origin/master:category_predictor/templates/map.html
->>>>>>> origin/master
-                [40.3505527,-79.8868138],
->>>>>>> origin/master
                 {
                     icon: new L.Icon.Default()
                     }
                 )
-<<<<<<< HEAD
-                .addTo(marker_cluster_5956488234ce4a56ad7134dc6dbe7821);
+                .addTo(marker_cluster_2d06be313a914a55a4be0e57487fc23d);
             
         
             
-            var popup_510acfc455714af481a43e967ae777cd = L.popup({maxWidth: '300'});
+            var popup_c1a860e8ea0a4b058f2b38299b35bf66 = L.popup({maxWidth: '300'});
 
             
-                var html_31934959b8b94d1bbf1fbbbe758c8ce7 = $('         <div id="html_31934959b8b94d1bbf1fbbbe758c8ce7"                 style="width: 100.0%; height: 100.0%;">                 Clancy&#39;s Pub,  202 McClure St Dravosburg, PA 15034,  Rating = 3.0</div>                 ')[0];
-                popup_510acfc455714af481a43e967ae777cd.setContent(html_31934959b8b94d1bbf1fbbbe758c8ce7);
+                var html_4bcb0d64e4b443ab826ced3a18db52f8 = $('         <div id="html_4bcb0d64e4b443ab826ced3a18db52f8"                 style="width: 100.0%; height: 100.0%;">                 Emil&#39;s Lounge,  414 Hawkins Ave Braddock, PA 15104,  Rating = 4.5</div>                 ')[0];
+                popup_c1a860e8ea0a4b058f2b38299b35bf66.setContent(html_4bcb0d64e4b443ab826ced3a18db52f8);
             
 
-            marker_859093dbb48a4b4c8d64e7eeba06dbf9.bindPopup(popup_510acfc455714af481a43e967ae777cd);
-=======
-<<<<<<< HEAD
-                .addTo(marker_cluster_117d894f5c4d41009115779439782f77);
-=======
-<<<<<<< HEAD:category_predictor/map.html
-                .addTo(marker_cluster_563f6251c99a4f2290ee7920f13ff89c);
-            
-        
-            
-            var popup_2574ad07f66d4b338a58df6e98fe1d6d = L.popup({maxWidth: '300'});
-
-            
-                var html_791918459a3b4cf7b3295b9bf2b0c580 = $('         <div id="html_791918459a3b4cf7b3295b9bf2b0c580"                 style="width: 100.0%; height: 100.0%;">                 Clancy&#39;s Pub,  202 McClure St Dravosburg, PA 15034,  Rating = 3.0</div>                 ')[0];
-                popup_2574ad07f66d4b338a58df6e98fe1d6d.setContent(html_791918459a3b4cf7b3295b9bf2b0c580);
-            
-
-            marker_edd2817080b8486196e280ed46f721e8.bindPopup(popup_2574ad07f66d4b338a58df6e98fe1d6d);
-=======
-                .addTo(marker_cluster_0cc41de555ee4d848615dedbcdde577e);
->>>>>>> origin/master
-            
-        
-            
-            var popup_3c2bb92b5b0042989303d4a39af751b6 = L.popup({maxWidth: '300'});
-
-            
-                var html_4e68c3d1f31b4a46a2d4196c3df4e7a7 = $('         <div id="html_4e68c3d1f31b4a46a2d4196c3df4e7a7"                 style="width: 100.0%; height: 100.0%;">                 Emil&#39;s Lounge,  414 Hawkins Ave Braddock, PA 15104,  Rating = 4.5</div>                 ')[0];
-                popup_3c2bb92b5b0042989303d4a39af751b6.setContent(html_4e68c3d1f31b4a46a2d4196c3df4e7a7);
-            
-
-<<<<<<< HEAD
-            marker_3de1abcfc026407fa6aa0ec45faee90c.bindPopup(popup_3c2bb92b5b0042989303d4a39af751b6);
-=======
-            marker_5c89be87c7b04108a28583ff1e9ece28.bindPopup(popup_2eaa0fa161aa43f1880c4f7f2c2373fa);
->>>>>>> origin/master:category_predictor/templates/map.html
->>>>>>> origin/master
->>>>>>> origin/master
+            marker_e71e6271212a43f4b25442c6dc7747a9.bindPopup(popup_c1a860e8ea0a4b058f2b38299b35bf66);
 
             
         
         
             
 
-<<<<<<< HEAD
-            var marker_2d38885e168c4b548c45d49da198c385 = L.marker(
-=======
-<<<<<<< HEAD
-            var marker_140eacc8fa27451f89dde4fa589add9d = L.marker(
+            var marker_0291366f9102409995fdeec7567009de = L.marker(
                 [40.4034049,-79.8557821],
-=======
-<<<<<<< HEAD:category_predictor/map.html
-            var marker_ce280c0d53864977accd590ad965864b = L.marker(
-=======
-            var marker_a5c57205880e49659aaaea01b6374fa9 = L.marker(
->>>>>>> origin/master:category_predictor/templates/map.html
->>>>>>> origin/master
-                [40.3541155,-80.0146597],
->>>>>>> origin/master
                 {
                     icon: new L.Icon.Default()
                     }
                 )
-<<<<<<< HEAD
-                .addTo(marker_cluster_5956488234ce4a56ad7134dc6dbe7821);
+                .addTo(marker_cluster_2d06be313a914a55a4be0e57487fc23d);
             
         
             
-            var popup_eb29877c53f44f27864cfa8f61761c7e = L.popup({maxWidth: '300'});
+            var popup_a22c1b108cf5459ba7ab05d8453423b6 = L.popup({maxWidth: '300'});
 
             
-                var html_cd55b1647a1c4a7a8d91be09d0bc8ef8 = $('         <div id="html_cd55b1647a1c4a7a8d91be09d0bc8ef8"                 style="width: 100.0%; height: 100.0%;">                 Cool Springs Golf Center,  1530 Hamilton Rd Bethel Park, PA 15234,  Rating = 2.5</div>                 ')[0];
-                popup_eb29877c53f44f27864cfa8f61761c7e.setContent(html_cd55b1647a1c4a7a8d91be09d0bc8ef8);
+                var html_7cef2e77108a4929a3ef1f09f95d081c = $('         <div id="html_7cef2e77108a4929a3ef1f09f95d081c"                 style="width: 100.0%; height: 100.0%;">                 Grand View Golf Club,  1000 Clubhouse Dr Braddock, PA 15104,  Rating = 5.0</div>                 ')[0];
+                popup_a22c1b108cf5459ba7ab05d8453423b6.setContent(html_7cef2e77108a4929a3ef1f09f95d081c);
             
 
-            marker_2d38885e168c4b548c45d49da198c385.bindPopup(popup_eb29877c53f44f27864cfa8f61761c7e);
-=======
-<<<<<<< HEAD
-                .addTo(marker_cluster_117d894f5c4d41009115779439782f77);
-=======
-<<<<<<< HEAD:category_predictor/map.html
-                .addTo(marker_cluster_563f6251c99a4f2290ee7920f13ff89c);
-            
-        
-            
-            var popup_7ef224ee5e7142d598dfa5256f2087e6 = L.popup({maxWidth: '300'});
-
-            
-                var html_842b69621bf24f76b53276829aa8e7e8 = $('         <div id="html_842b69621bf24f76b53276829aa8e7e8"                 style="width: 100.0%; height: 100.0%;">                 Cool Springs Golf Center,  1530 Hamilton Rd Bethel Park, PA 15234,  Rating = 2.5</div>                 ')[0];
-                popup_7ef224ee5e7142d598dfa5256f2087e6.setContent(html_842b69621bf24f76b53276829aa8e7e8);
-            
-
-            marker_ce280c0d53864977accd590ad965864b.bindPopup(popup_7ef224ee5e7142d598dfa5256f2087e6);
-=======
-                .addTo(marker_cluster_0cc41de555ee4d848615dedbcdde577e);
->>>>>>> origin/master
-            
-        
-            
-            var popup_05a6bae7a64f4c6cb1bf10a783be6c99 = L.popup({maxWidth: '300'});
-
-            
-                var html_28cc7c26bbaa450bba4859cea78a509c = $('         <div id="html_28cc7c26bbaa450bba4859cea78a509c"                 style="width: 100.0%; height: 100.0%;">                 Grand View Golf Club,  1000 Clubhouse Dr Braddock, PA 15104,  Rating = 5.0</div>                 ')[0];
-                popup_05a6bae7a64f4c6cb1bf10a783be6c99.setContent(html_28cc7c26bbaa450bba4859cea78a509c);
-            
-
-<<<<<<< HEAD
-            marker_140eacc8fa27451f89dde4fa589add9d.bindPopup(popup_05a6bae7a64f4c6cb1bf10a783be6c99);
-=======
-            marker_a5c57205880e49659aaaea01b6374fa9.bindPopup(popup_713035f1fc5d4cd691d1ae4a386fadbc);
->>>>>>> origin/master:category_predictor/templates/map.html
->>>>>>> origin/master
->>>>>>> origin/master
+            marker_0291366f9102409995fdeec7567009de.bindPopup(popup_a22c1b108cf5459ba7ab05d8453423b6);
 
             
         
         
             
 
-<<<<<<< HEAD
-            var marker_e385578acdb74c618e1703128bfb02f0 = L.marker(
-=======
-<<<<<<< HEAD
-            var marker_0015e2ca2968461db340326d6665c705 = L.marker(
+            var marker_efb067d645a3453cb03dde33b1e15903 = L.marker(
                 [40.4154859,-80.0675491],
-=======
-<<<<<<< HEAD:category_predictor/map.html
-            var marker_f47536f4be714196bab5116830758a7e = L.marker(
-=======
-            var marker_28b815ff1a5643a3ab823b44f0873647 = L.marker(
->>>>>>> origin/master:category_predictor/templates/map.html
->>>>>>> origin/master
-                [40.4088301,-79.8662107],
->>>>>>> origin/master
                 {
                     icon: new L.Icon.Default()
                     }
                 )
-<<<<<<< HEAD
-                .addTo(marker_cluster_5956488234ce4a56ad7134dc6dbe7821);
+                .addTo(marker_cluster_2d06be313a914a55a4be0e57487fc23d);
             
         
             
-            var popup_53b1dc844a45453f84202681ef57a2c6 = L.popup({maxWidth: '300'});
+            var popup_9f30c952f3704d628fc5ea6749939a10 = L.popup({maxWidth: '300'});
 
             
-                var html_a7700aaecc7e4bd7a290f0d479ec9690 = $('         <div id="html_a7700aaecc7e4bd7a290f0d479ec9690"                 style="width: 100.0%; height: 100.0%;">                 Emil&#39;s Lounge,  414 Hawkins Ave Braddock, PA 15104,  Rating = 4.5</div>                 ')[0];
-                popup_53b1dc844a45453f84202681ef57a2c6.setContent(html_a7700aaecc7e4bd7a290f0d479ec9690);
+                var html_c368d637059f4f76b50b0d6d53f2802a = $('         <div id="html_c368d637059f4f76b50b0d6d53f2802a"                 style="width: 100.0%; height: 100.0%;">                 Alexion&#39;s Bar &amp; Grill,  141 Hawthorne St Greentree Carnegie, PA 15106,  Rating = 4.0</div>                 ')[0];
+                popup_9f30c952f3704d628fc5ea6749939a10.setContent(html_c368d637059f4f76b50b0d6d53f2802a);
             
 
-            marker_e385578acdb74c618e1703128bfb02f0.bindPopup(popup_53b1dc844a45453f84202681ef57a2c6);
-=======
-<<<<<<< HEAD
-                .addTo(marker_cluster_117d894f5c4d41009115779439782f77);
-=======
-<<<<<<< HEAD:category_predictor/map.html
-                .addTo(marker_cluster_563f6251c99a4f2290ee7920f13ff89c);
-            
-        
-            
-            var popup_f1194d1977a74725800321e24e77477e = L.popup({maxWidth: '300'});
-
-            
-                var html_107bac2eec1f494a800c148e1e05824c = $('         <div id="html_107bac2eec1f494a800c148e1e05824c"                 style="width: 100.0%; height: 100.0%;">                 Emil&#39;s Lounge,  414 Hawkins Ave Braddock, PA 15104,  Rating = 4.5</div>                 ')[0];
-                popup_f1194d1977a74725800321e24e77477e.setContent(html_107bac2eec1f494a800c148e1e05824c);
-            
-
-            marker_f47536f4be714196bab5116830758a7e.bindPopup(popup_f1194d1977a74725800321e24e77477e);
-=======
-                .addTo(marker_cluster_0cc41de555ee4d848615dedbcdde577e);
->>>>>>> origin/master
-            
-        
-            
-            var popup_7ecefaea1a3046c598df354ae4cfcd2c = L.popup({maxWidth: '300'});
-
-            
-                var html_d69593fefce041239a9c8e594522dabd = $('         <div id="html_d69593fefce041239a9c8e594522dabd"                 style="width: 100.0%; height: 100.0%;">                 Alexion&#39;s Bar &amp; Grill,  141 Hawthorne St Greentree Carnegie, PA 15106,  Rating = 4.0</div>                 ')[0];
-                popup_7ecefaea1a3046c598df354ae4cfcd2c.setContent(html_d69593fefce041239a9c8e594522dabd);
-            
-
-<<<<<<< HEAD
-            marker_0015e2ca2968461db340326d6665c705.bindPopup(popup_7ecefaea1a3046c598df354ae4cfcd2c);
-=======
-            marker_28b815ff1a5643a3ab823b44f0873647.bindPopup(popup_b3a345190cbf4311abf83806ee88121b);
->>>>>>> origin/master:category_predictor/templates/map.html
->>>>>>> origin/master
->>>>>>> origin/master
+            marker_efb067d645a3453cb03dde33b1e15903.bindPopup(popup_9f30c952f3704d628fc5ea6749939a10);
 
             
         
         
             
 
-<<<<<<< HEAD
-            var marker_02a136c26efb4f7da05266c8f0e52eb5 = L.marker(
-=======
-<<<<<<< HEAD
-            var marker_8bcee455976342c0a412c66ff2ff6456 = L.marker(
+            var marker_e7409d7e1b9b4d78b268864d05e0d780 = L.marker(
                 [40.4054039,-80.0762665],
-=======
-<<<<<<< HEAD:category_predictor/map.html
-            var marker_7e4333739d1b4953b4bcafab5fd806b7 = L.marker(
-=======
-            var marker_731279b447884c5fa878d3e33f99aaca = L.marker(
->>>>>>> origin/master:category_predictor/templates/map.html
->>>>>>> origin/master
-                [40.4034049,-79.8557821],
->>>>>>> origin/master
                 {
                     icon: new L.Icon.Default()
                     }
                 )
-<<<<<<< HEAD
-                .addTo(marker_cluster_5956488234ce4a56ad7134dc6dbe7821);
-=======
-<<<<<<< HEAD
-                .addTo(marker_cluster_117d894f5c4d41009115779439782f77);
-=======
-<<<<<<< HEAD:category_predictor/map.html
-                .addTo(marker_cluster_563f6251c99a4f2290ee7920f13ff89c);
->>>>>>> origin/master
+                .addTo(marker_cluster_2d06be313a914a55a4be0e57487fc23d);
             
         
             
-            var popup_387176f4fa964461923d8aeb57c91d73 = L.popup({maxWidth: '300'});
+            var popup_99f289e8f1e94c14b3a5b97abb457a21 = L.popup({maxWidth: '300'});
 
             
-                var html_6db0cff5740e420ca68b15702bbf619d = $('         <div id="html_6db0cff5740e420ca68b15702bbf619d"                 style="width: 100.0%; height: 100.0%;">                 Grand View Golf Club,  1000 Clubhouse Dr Braddock, PA 15104,  Rating = 5.0</div>                 ')[0];
-                popup_387176f4fa964461923d8aeb57c91d73.setContent(html_6db0cff5740e420ca68b15702bbf619d);
+                var html_d0ee09d3bb74435883f1097b27fc8f0d = $('         <div id="html_d0ee09d3bb74435883f1097b27fc8f0d"                 style="width: 100.0%; height: 100.0%;">                 Forsythe Miniature Golf &amp; Snacks,  920 Forsythe Rd Carnegie Carnegie, PA 15106,  Rating = 4.0</div>                 ')[0];
+                popup_99f289e8f1e94c14b3a5b97abb457a21.setContent(html_d0ee09d3bb74435883f1097b27fc8f0d);
             
 
-<<<<<<< HEAD
-            marker_02a136c26efb4f7da05266c8f0e52eb5.bindPopup(popup_387176f4fa964461923d8aeb57c91d73);
-=======
-            marker_7e4333739d1b4953b4bcafab5fd806b7.bindPopup(popup_53de6744e72442e6aa1b4775d55666c2);
-=======
-                .addTo(marker_cluster_0cc41de555ee4d848615dedbcdde577e);
->>>>>>> origin/master
-            
-        
-            
-            var popup_9f9637f71da7440b9131bcd972d4179a = L.popup({maxWidth: '300'});
-
-            
-                var html_88acd2463015411c90f7cfff843f402f = $('         <div id="html_88acd2463015411c90f7cfff843f402f"                 style="width: 100.0%; height: 100.0%;">                 Forsythe Miniature Golf &amp; Snacks,  920 Forsythe Rd Carnegie Carnegie, PA 15106,  Rating = 4.0</div>                 ')[0];
-                popup_9f9637f71da7440b9131bcd972d4179a.setContent(html_88acd2463015411c90f7cfff843f402f);
-            
-
-<<<<<<< HEAD
-            marker_8bcee455976342c0a412c66ff2ff6456.bindPopup(popup_9f9637f71da7440b9131bcd972d4179a);
-=======
-            marker_731279b447884c5fa878d3e33f99aaca.bindPopup(popup_dea465bbfaec4ed389e3d727b80adbb2);
->>>>>>> origin/master:category_predictor/templates/map.html
->>>>>>> origin/master
->>>>>>> origin/master
+            marker_e7409d7e1b9b4d78b268864d05e0d780.bindPopup(popup_99f289e8f1e94c14b3a5b97abb457a21);
 
             
         
         
             
 
-<<<<<<< HEAD
-            var marker_919a7e4f2c1344ca93ea3c305c1a76dc = L.marker(
-=======
-<<<<<<< HEAD
-            var marker_dbf3c8470cce4a16a8471b048d9ef8f2 = L.marker(
+            var marker_b45d6f531be94c019f016fb77100e216 = L.marker(
                 [40.3922071,-80.0691338],
-=======
-<<<<<<< HEAD:category_predictor/map.html
-            var marker_c23b59cea9ab4a8ab2b5fddeee3f7ac8 = L.marker(
-=======
-            var marker_870d23d8c485406d8b2ff48b3cec1e9c = L.marker(
->>>>>>> origin/master:category_predictor/templates/map.html
->>>>>>> origin/master
-                [40.4154859,-80.0675491],
->>>>>>> origin/master
                 {
                     icon: new L.Icon.Default()
                     }
                 )
-<<<<<<< HEAD
-                .addTo(marker_cluster_5956488234ce4a56ad7134dc6dbe7821);
+                .addTo(marker_cluster_2d06be313a914a55a4be0e57487fc23d);
             
         
             
-            var popup_d550b76958464847931f2d60e5a207f7 = L.popup({maxWidth: '300'});
+            var popup_8d9db19123184ebfa17ff2fbdcca3a1b = L.popup({maxWidth: '300'});
 
             
-                var html_d82cd5437c744ea1b1697e0108b16487 = $('         <div id="html_d82cd5437c744ea1b1697e0108b16487"                 style="width: 100.0%; height: 100.0%;">                 Alexion&#39;s Bar &amp; Grill,  141 Hawthorne St Greentree Carnegie, PA 15106,  Rating = 4.0</div>                 ')[0];
-                popup_d550b76958464847931f2d60e5a207f7.setContent(html_d82cd5437c744ea1b1697e0108b16487);
+                var html_aa8b124ed54446a4bd8cb7e6d91b87e2 = $('         <div id="html_aa8b124ed54446a4bd8cb7e6d91b87e2"                 style="width: 100.0%; height: 100.0%;">                 Greentree Animal Clinic,  2080 Greentree Rd Pittsburgh, PA 15220,  Rating = 4.0</div>                 ')[0];
+                popup_8d9db19123184ebfa17ff2fbdcca3a1b.setContent(html_aa8b124ed54446a4bd8cb7e6d91b87e2);
             
 
-            marker_919a7e4f2c1344ca93ea3c305c1a76dc.bindPopup(popup_d550b76958464847931f2d60e5a207f7);
-=======
-<<<<<<< HEAD
-                .addTo(marker_cluster_117d894f5c4d41009115779439782f77);
-=======
-<<<<<<< HEAD:category_predictor/map.html
-                .addTo(marker_cluster_563f6251c99a4f2290ee7920f13ff89c);
-            
-        
-            
-            var popup_8d258ba9d8bf4f7b94953b0931831110 = L.popup({maxWidth: '300'});
-
-            
-                var html_a258901c3d794edfb3630fbee265c072 = $('         <div id="html_a258901c3d794edfb3630fbee265c072"                 style="width: 100.0%; height: 100.0%;">                 Alexion&#39;s Bar &amp; Grill,  141 Hawthorne St Greentree Carnegie, PA 15106,  Rating = 4.0</div>                 ')[0];
-                popup_8d258ba9d8bf4f7b94953b0931831110.setContent(html_a258901c3d794edfb3630fbee265c072);
-            
-
-            marker_c23b59cea9ab4a8ab2b5fddeee3f7ac8.bindPopup(popup_8d258ba9d8bf4f7b94953b0931831110);
-=======
-                .addTo(marker_cluster_0cc41de555ee4d848615dedbcdde577e);
->>>>>>> origin/master
-            
-        
-            
-            var popup_759e7137ad9a4f5db6ca0ebfa863260d = L.popup({maxWidth: '300'});
-
-            
-                var html_fc16b7871c694c3ca60deba45da74507 = $('         <div id="html_fc16b7871c694c3ca60deba45da74507"                 style="width: 100.0%; height: 100.0%;">                 Greentree Animal Clinic,  2080 Greentree Rd Pittsburgh, PA 15220,  Rating = 4.0</div>                 ')[0];
-                popup_759e7137ad9a4f5db6ca0ebfa863260d.setContent(html_fc16b7871c694c3ca60deba45da74507);
-            
-
-<<<<<<< HEAD
-            marker_dbf3c8470cce4a16a8471b048d9ef8f2.bindPopup(popup_759e7137ad9a4f5db6ca0ebfa863260d);
-=======
-            marker_870d23d8c485406d8b2ff48b3cec1e9c.bindPopup(popup_ff757776718f4b6bb524caaa784acfc3);
->>>>>>> origin/master:category_predictor/templates/map.html
->>>>>>> origin/master
->>>>>>> origin/master
+            marker_b45d6f531be94c019f016fb77100e216.bindPopup(popup_8d9db19123184ebfa17ff2fbdcca3a1b);
 
             
         
         
             
 
-<<<<<<< HEAD
-            var marker_6bb6575f943546feba55cb7fab746c87 = L.marker(
-=======
-<<<<<<< HEAD
-            var marker_c09274ceb9ce43f5b780d5a152414c7e = L.marker(
+            var marker_3cde55bb85474f5ea840dfe3dfdd4951 = L.marker(
                 [40.4068423,-80.0858661],
-=======
-<<<<<<< HEAD:category_predictor/map.html
-            var marker_7da861ed027e4a5dba8bf654f87bd3db = L.marker(
-=======
-            var marker_e0f0cd58afc2484297c22d4d27c3cacd = L.marker(
->>>>>>> origin/master:category_predictor/templates/map.html
->>>>>>> origin/master
-                [40.394588,-80.0844539],
->>>>>>> origin/master
                 {
                     icon: new L.Icon.Default()
                     }
                 )
-<<<<<<< HEAD
-                .addTo(marker_cluster_5956488234ce4a56ad7134dc6dbe7821);
-=======
-<<<<<<< HEAD
-                .addTo(marker_cluster_117d894f5c4d41009115779439782f77);
-=======
-<<<<<<< HEAD:category_predictor/map.html
-                .addTo(marker_cluster_563f6251c99a4f2290ee7920f13ff89c);
->>>>>>> origin/master
+                .addTo(marker_cluster_2d06be313a914a55a4be0e57487fc23d);
             
         
             
-            var popup_8f67eecd1df441e7be12421cca42abc4 = L.popup({maxWidth: '300'});
+            var popup_9f78c75d51494634b8dedcb9bd144485 = L.popup({maxWidth: '300'});
 
             
-                var html_014e26f0f4744cbc9968184bb59ee986 = $('         <div id="html_014e26f0f4744cbc9968184bb59ee986"                 style="width: 100.0%; height: 100.0%;">                 Flynn&#39;s Tire &amp; Auto Service,  718A Hope Hollow Rd Carnegie, PA 15106,  Rating = 2.5</div>                 ')[0];
-                popup_8f67eecd1df441e7be12421cca42abc4.setContent(html_014e26f0f4744cbc9968184bb59ee986);
+                var html_66c05d6da3c54f0c836fe08098a13687 = $('         <div id="html_66c05d6da3c54f0c836fe08098a13687"                 style="width: 100.0%; height: 100.0%;">                 Carnegie Free Library,  300 Beechwood Ave Carnegie Carnegie, PA 15106,  Rating = 4.5</div>                 ')[0];
+                popup_9f78c75d51494634b8dedcb9bd144485.setContent(html_66c05d6da3c54f0c836fe08098a13687);
             
 
-<<<<<<< HEAD
-            marker_6bb6575f943546feba55cb7fab746c87.bindPopup(popup_8f67eecd1df441e7be12421cca42abc4);
-=======
-            marker_7da861ed027e4a5dba8bf654f87bd3db.bindPopup(popup_6d699363e54e4fca8e36d9b63047a33c);
-=======
-                .addTo(marker_cluster_0cc41de555ee4d848615dedbcdde577e);
->>>>>>> origin/master
-            
-        
-            
-            var popup_9b0d96880e324935ab601ca681fc4f13 = L.popup({maxWidth: '300'});
-
-            
-                var html_c97a59f849f54c7d95ce99a6952d9961 = $('         <div id="html_c97a59f849f54c7d95ce99a6952d9961"                 style="width: 100.0%; height: 100.0%;">                 Carnegie Free Library,  300 Beechwood Ave Carnegie Carnegie, PA 15106,  Rating = 4.5</div>                 ')[0];
-                popup_9b0d96880e324935ab601ca681fc4f13.setContent(html_c97a59f849f54c7d95ce99a6952d9961);
-            
-
-<<<<<<< HEAD
-            marker_c09274ceb9ce43f5b780d5a152414c7e.bindPopup(popup_9b0d96880e324935ab601ca681fc4f13);
-=======
-            marker_e0f0cd58afc2484297c22d4d27c3cacd.bindPopup(popup_e7a1f9359ffe4853933db1dce480f3fa);
->>>>>>> origin/master:category_predictor/templates/map.html
->>>>>>> origin/master
->>>>>>> origin/master
+            marker_3cde55bb85474f5ea840dfe3dfdd4951.bindPopup(popup_9f78c75d51494634b8dedcb9bd144485);
 
             
         
         
             
 
-<<<<<<< HEAD
-            var marker_455d235358394b7b992be5620fa6fc2a = L.marker(
-=======
-<<<<<<< HEAD
-            var marker_f3c1924f8e3d4ecfbbdd65915b8ce963 = L.marker(
+            var marker_ae23e0dcfd93429b84174ee643977714 = L.marker(
                 [40.3983526,-80.0824517],
                 {
                     icon: new L.Icon.Default()
                     }
                 )
-                .addTo(marker_cluster_117d894f5c4d41009115779439782f77);
+                .addTo(marker_cluster_2d06be313a914a55a4be0e57487fc23d);
             
         
             
-            var popup_12157b7c1f734fe6a440d01449b44ee2 = L.popup({maxWidth: '300'});
+            var popup_d4dfca62403c407cb0f8beabc42476ee = L.popup({maxWidth: '300'});
 
             
-                var html_82ccb02965594c3ba4a3418792b7aca8 = $('         <div id="html_82ccb02965594c3ba4a3418792b7aca8"                 style="width: 100.0%; height: 100.0%;">                 Advance Auto Parts,  1011 Washington Ave Carnegie, PA 15106,  Rating = 3.5</div>                 ')[0];
-                popup_12157b7c1f734fe6a440d01449b44ee2.setContent(html_82ccb02965594c3ba4a3418792b7aca8);
+                var html_82f5ad6cdfaa4a42b60ee99507821ea2 = $('         <div id="html_82f5ad6cdfaa4a42b60ee99507821ea2"                 style="width: 100.0%; height: 100.0%;">                 Advance Auto Parts,  1011 Washington Ave Carnegie, PA 15106,  Rating = 3.5</div>                 ')[0];
+                popup_d4dfca62403c407cb0f8beabc42476ee.setContent(html_82f5ad6cdfaa4a42b60ee99507821ea2);
             
 
-            marker_f3c1924f8e3d4ecfbbdd65915b8ce963.bindPopup(popup_12157b7c1f734fe6a440d01449b44ee2);
+            marker_ae23e0dcfd93429b84174ee643977714.bindPopup(popup_d4dfca62403c407cb0f8beabc42476ee);
 
             
         
         
             
 
-            var marker_7bbe730ebacf4c3783b6e7765941e1c5 = L.marker(
+            var marker_a97f133e1a3943449b9875e4cd04fdf5 = L.marker(
                 [40.3875124,-80.0932152],
-=======
-<<<<<<< HEAD:category_predictor/map.html
-            var marker_2b57e85ddb044b17bcd1f0fdda6893c9 = L.marker(
-=======
-            var marker_901130b60fde40068c8e579dce1f5880 = L.marker(
->>>>>>> origin/master:category_predictor/templates/map.html
->>>>>>> origin/master
-                [40.4054039,-80.0762665],
->>>>>>> origin/master
                 {
                     icon: new L.Icon.Default()
                     }
                 )
-<<<<<<< HEAD
-                .addTo(marker_cluster_5956488234ce4a56ad7134dc6dbe7821);
+                .addTo(marker_cluster_2d06be313a914a55a4be0e57487fc23d);
             
         
             
-            var popup_d01217c2008342b283d0065bea42214a = L.popup({maxWidth: '300'});
+            var popup_6e83dd036cfc494aab20012ec73a9b9f = L.popup({maxWidth: '300'});
 
             
-                var html_51a345124c2c49f6b8aed50ae9d04d9f = $('         <div id="html_51a345124c2c49f6b8aed50ae9d04d9f"                 style="width: 100.0%; height: 100.0%;">                 Forsythe Miniature Golf &amp; Snacks,  920 Forsythe Rd Carnegie Carnegie, PA 15106,  Rating = 4.0</div>                 ')[0];
-                popup_d01217c2008342b283d0065bea42214a.setContent(html_51a345124c2c49f6b8aed50ae9d04d9f);
+                var html_f82328fee9bd4b929ca60266d92e9075 = $('         <div id="html_f82328fee9bd4b929ca60266d92e9075"                 style="width: 100.0%; height: 100.0%;">                 Kings Family Restaurant,  2100 Washington Pike Carnegie, PA 15106,  Rating = 3.5</div>                 ')[0];
+                popup_6e83dd036cfc494aab20012ec73a9b9f.setContent(html_f82328fee9bd4b929ca60266d92e9075);
             
 
-            marker_455d235358394b7b992be5620fa6fc2a.bindPopup(popup_d01217c2008342b283d0065bea42214a);
-=======
-<<<<<<< HEAD
-                .addTo(marker_cluster_117d894f5c4d41009115779439782f77);
-=======
-<<<<<<< HEAD:category_predictor/map.html
-                .addTo(marker_cluster_563f6251c99a4f2290ee7920f13ff89c);
-            
-        
-            
-            var popup_9d9f3c5add5f4e8fa2d430ffdb7b6ac9 = L.popup({maxWidth: '300'});
-
-            
-                var html_7f22bd69628641a795c797ab26960d53 = $('         <div id="html_7f22bd69628641a795c797ab26960d53"                 style="width: 100.0%; height: 100.0%;">                 Forsythe Miniature Golf &amp; Snacks,  920 Forsythe Rd Carnegie Carnegie, PA 15106,  Rating = 4.0</div>                 ')[0];
-                popup_9d9f3c5add5f4e8fa2d430ffdb7b6ac9.setContent(html_7f22bd69628641a795c797ab26960d53);
-            
-
-            marker_2b57e85ddb044b17bcd1f0fdda6893c9.bindPopup(popup_9d9f3c5add5f4e8fa2d430ffdb7b6ac9);
-=======
-                .addTo(marker_cluster_0cc41de555ee4d848615dedbcdde577e);
->>>>>>> origin/master
-            
-        
-            
-            var popup_f1559c1e117d41e393867146e6ae2b50 = L.popup({maxWidth: '300'});
-
-            
-                var html_76b33e58ac974a9c95244fab9c809321 = $('         <div id="html_76b33e58ac974a9c95244fab9c809321"                 style="width: 100.0%; height: 100.0%;">                 Kings Family Restaurant,  2100 Washington Pike Carnegie, PA 15106,  Rating = 3.5</div>                 ')[0];
-                popup_f1559c1e117d41e393867146e6ae2b50.setContent(html_76b33e58ac974a9c95244fab9c809321);
-            
-
-<<<<<<< HEAD
-            marker_7bbe730ebacf4c3783b6e7765941e1c5.bindPopup(popup_f1559c1e117d41e393867146e6ae2b50);
-=======
-            marker_901130b60fde40068c8e579dce1f5880.bindPopup(popup_2023bb6074134767b62a88017366fc17);
->>>>>>> origin/master:category_predictor/templates/map.html
->>>>>>> origin/master
->>>>>>> origin/master
+            marker_a97f133e1a3943449b9875e4cd04fdf5.bindPopup(popup_6e83dd036cfc494aab20012ec73a9b9f);
 
             
         
         
             
 
-<<<<<<< HEAD
-            var marker_918c677e78c94c22b10a75ae02a0a18a = L.marker(
-=======
-<<<<<<< HEAD
-            var marker_ec0dff2e4b604a0da67688e7f9799735 = L.marker(
+            var marker_5e67252cfbdb49a18b5939100916ce02 = L.marker(
                 [40.3875124,-80.0932152],
-=======
-<<<<<<< HEAD:category_predictor/map.html
-            var marker_a05a0f0659e8412f90ab86b214c9bada = L.marker(
-=======
-            var marker_6c5b8a47b0f2492b976455a444272f8d = L.marker(
->>>>>>> origin/master:category_predictor/templates/map.html
->>>>>>> origin/master
-                [40.4062805,-80.0903905],
->>>>>>> origin/master
                 {
                     icon: new L.Icon.Default()
                     }
                 )
-<<<<<<< HEAD
-                .addTo(marker_cluster_5956488234ce4a56ad7134dc6dbe7821);
+                .addTo(marker_cluster_2d06be313a914a55a4be0e57487fc23d);
             
         
             
-            var popup_5cf5db757d314c3499b8922b455fb97d = L.popup({maxWidth: '300'});
+            var popup_54583ecbd4424bb6ac574107fd2196ce = L.popup({maxWidth: '300'});
 
             
-                var html_5cccf461c12346c0a8668ac06f1050dc = $('         <div id="html_5cccf461c12346c0a8668ac06f1050dc"                 style="width: 100.0%; height: 100.0%;">                 Quaker State Construction,  8 Logan St Carnegie Carnegie, PA 15106,  Rating = 2.5</div>                 ')[0];
-                popup_5cf5db757d314c3499b8922b455fb97d.setContent(html_5cccf461c12346c0a8668ac06f1050dc);
+                var html_157a509a9a3b49f5a607260eabfa2cc0 = $('         <div id="html_157a509a9a3b49f5a607260eabfa2cc0"                 style="width: 100.0%; height: 100.0%;">                 Shop N&#39; Save,  2100 Washington Pike Carnegie, PA 15106,  Rating = 4.0</div>                 ')[0];
+                popup_54583ecbd4424bb6ac574107fd2196ce.setContent(html_157a509a9a3b49f5a607260eabfa2cc0);
             
 
-            marker_918c677e78c94c22b10a75ae02a0a18a.bindPopup(popup_5cf5db757d314c3499b8922b455fb97d);
-=======
-<<<<<<< HEAD
-                .addTo(marker_cluster_117d894f5c4d41009115779439782f77);
-=======
-<<<<<<< HEAD:category_predictor/map.html
-                .addTo(marker_cluster_563f6251c99a4f2290ee7920f13ff89c);
-            
-        
-            
-            var popup_ac213732a34e40c592774f1aa0aa6a97 = L.popup({maxWidth: '300'});
-
-            
-                var html_1c7364a288434d68bda0ff76f000d9ff = $('         <div id="html_1c7364a288434d68bda0ff76f000d9ff"                 style="width: 100.0%; height: 100.0%;">                 Quaker State Construction,  8 Logan St Carnegie Carnegie, PA 15106,  Rating = 2.5</div>                 ')[0];
-                popup_ac213732a34e40c592774f1aa0aa6a97.setContent(html_1c7364a288434d68bda0ff76f000d9ff);
-            
-
-            marker_a05a0f0659e8412f90ab86b214c9bada.bindPopup(popup_ac213732a34e40c592774f1aa0aa6a97);
-=======
-                .addTo(marker_cluster_0cc41de555ee4d848615dedbcdde577e);
->>>>>>> origin/master
-            
-        
-            
-            var popup_423fb192a8144b4584c1d660b86168ad = L.popup({maxWidth: '300'});
-
-            
-                var html_96a101eaec4945f097f1516a2d2baf27 = $('         <div id="html_96a101eaec4945f097f1516a2d2baf27"                 style="width: 100.0%; height: 100.0%;">                 Shop N&#39; Save,  2100 Washington Pike Carnegie, PA 15106,  Rating = 4.0</div>                 ')[0];
-                popup_423fb192a8144b4584c1d660b86168ad.setContent(html_96a101eaec4945f097f1516a2d2baf27);
-            
-
-<<<<<<< HEAD
-            marker_ec0dff2e4b604a0da67688e7f9799735.bindPopup(popup_423fb192a8144b4584c1d660b86168ad);
-=======
-            marker_6c5b8a47b0f2492b976455a444272f8d.bindPopup(popup_631e0984030943dab9abbe0e12d71086);
->>>>>>> origin/master:category_predictor/templates/map.html
->>>>>>> origin/master
->>>>>>> origin/master
+            marker_5e67252cfbdb49a18b5939100916ce02.bindPopup(popup_54583ecbd4424bb6ac574107fd2196ce);
 
             
         

@@ -116,7 +116,7 @@ if __name__ == "__main__":
 	text = sys.argv[2]
 	# text = "chicken"
 	result={}
-	with open('linked_cate_name.json','r') as infile:
+	with open('../../dataset/linked_cate_name.json','r') as infile:
 		for lines in infile.readlines():
 			temp = json.loads(lines)
 			result[temp[0]]=temp[1]

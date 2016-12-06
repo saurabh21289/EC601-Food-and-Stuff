@@ -10,11 +10,11 @@ from wtforms import Form, TextField, TextAreaField, validators, StringField, Sub
 
 from random import randint
 
-import json
-import re
 import os
 import folium
 import pandas as pd
+
+from flask import jsonify
 
 import numpy as np
 
@@ -22,6 +22,9 @@ import math
 import sys
 
 import category_predictor
+
+import requests
+
 
 # App config.
 # DEBUG = True
@@ -124,37 +127,25 @@ values1 =[]
 
 @app.route("/", methods=['GET', 'POST'])
 def hello_world():
-    input_file = 'category_predictor_merged_without_restaurants.json'
+    input_file = 'category_predictor_merged.json'
     form = ReusableForm(request.form)
     print form.errors
     if request.method == 'POST':
         food=request.form['food']
         print food
-
-        result={}
-	with open('../../dataset/linked_cate_name.json','r') as infile:
-		for lines in infile.readlines():
-			temp = json.loads(lines)
-			result[temp[0]]=temp[1]
-        
         text = food
         guesses = ReviewCategoryClassifier(input_file).classify(text)
-        best_guesses = sorted(guesses.iteritems(), key=lambda (_, prob): prob, reverse=True)[0:5]
+        best_guesses = sorted(guesses.iteritems(), key=lambda (_, prob): prob, reverse=True)[0:8]
         locations(best_guesses)
         del list1[:]
         del values1[:]
         if form.validate():
             for guess, prob in best_guesses:
-                #result[guess][0][2]=(result[guess][0][2]).encode('utf-8')
-                result[guess][0][2]=(result[guess][0][2]).encode('ascii', 'ignore')
-                temp = ', '.join(str(item) for item in result[guess][0])
-		temp = re.sub(r'\n','',temp)
-		print str(temp), round(prob*100,2),'%'
-                #data = 'Category: "%s" - %.2f%% chance' % (guess, prob * 100)
-                #print str(data)
-                list1.append(str(temp))
+                data = 'Category: "%s" - %.2f%% chance' % (guess, prob * 100)
+                print str(data)
+                list1.append(guess)
                 values1.append(round(prob * 100,2)) #round(prob*100,2), '%'
-                flash('Predicted ' + str(temp))
+                flash('Predicted ' + str(data))
         else:
                 flash('All the form fields are required. ')
 
@@ -166,11 +157,23 @@ def chart():
     labels = ["January","February","March","April","May","June","July","August"]
     values = [10,9,8,7,6,4,7,8]
     colors = [ "#F7464A", "#46BFBD", "#FDB45C", "#FEDCBA","#ABCDEF", "#DDDDDD", "#ABCABC"  ]
+    # print "test"
     return render_template('chart.html', set=zip(values1, list1, colors))
 
 @app.route("/map")
 def map():
     return render_template('map.html')
+
+@app.route("/ip", methods=["GET"])
+def get_my_ip():
+    # print "IP Address = " + request.remote_addr
+    # return "Hi there!"
+    # ip_address = request.remote_addr
+    # print "ip = " + ip_address
+    # r = requests.get('http://freegeoip.net/json/' + str(ip_address))
+    # print r.json()
+    return jsonify({'ip': request.remote_addr}), 200
+    # # return jsonify({'ip': request.remote_addr}), 200
 
 
 def map_locations(lons, lats, names, stars, full_address):
