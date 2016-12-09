@@ -2,7 +2,8 @@
   <meta charset="utf-8" />
   <title>Chart.js </title>      <!-- import plugin script -->
   <script src='static/js/Chart.min.js'></script>   </head><body>
-<!-- bar chart canvas element --><div align="center"><canvas id="chart" width="378" height="400" ></canvas></div>
+<!-- bar chart canvas element -->
+<div align="center"><canvas id="chart" width="378" height="400" ></canvas></div>
 <script>
    var pieData = [
             {% for item,label,colors in set %}
@@ -24,7 +25,7 @@
   //  // draw pie chart
   // var ctx = document.getElementById("chart").getContext("2d");
   mychart.save();
-  mychart.translate(100, 50);
+  mychart.translate(0, 0);
   // ctx.fillRect(-offset_x, -offset_y, fill_x, fill_y);
   // var context = document.getElementById('chart').getContext('2d');
   // var skillsChart = new Chart(context).Pie(pieData);

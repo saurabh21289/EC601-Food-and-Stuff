@@ -170,6 +170,7 @@ def hello_world():
             for guess, prob in best_guesses:
                 #result[guess][0][2]=(result[guess][0][2]).encode('utf-8')
                 result[guess][0][2]=(result[guess][0][2]).encode('ascii', 'ignore')
+                result[guess][0][0]=(result[guess][0][0]).encode('ascii', 'ignore')
                 #temp = ', '.join(str(item) for item in result[guess][0])
                 temp = []
                 for item in result[guess][0]:
@@ -198,7 +199,8 @@ def hello_world():
                 value = round(prob * 100,2)
                 values1.append(value) #round(prob*100,2), '%'
                                
-                flash('Suggested Restaurant is "' + str(temp[0]) + '" with a Rating of ' + str(temp[1]) + ' stars.' + ' It is located at '+ '"' + str(temp[2]) + '"', str(best_guesses[0][0]) + ' Food')
+                flash('Suggested Restaurant is "' + str(temp[0]) + '" with a Rating of ' + str(temp[1]) + ' stars.' + ' Located at '+ '"' + str(temp[2]) + '"', str(best_guesses[0][0]) + ' Food')
+                #flash(str(temp[0]), str(temp[1]), str(temp[2]), str(best_guesses[0][0]))
         else:
                 flash('All the form fields are required.', 'Error')
 
@@ -251,7 +253,7 @@ def fullmap():
             "top:0;"
             "left:0;"
             "position:absolute;"
-            "z-index:200;"
+            "z-index:1;"
         ),
         lat=np.mean(lats),
         lng=np.mean(lons),
@@ -294,6 +296,30 @@ def fullmap():
                 'lng': str(lons[4]),
                 'infobox': str(names[4]) + ', ' + str(stars[4]) + ', ' + str(address[4])
             },
+##            {
+##                'icon': '//maps.google.com/mapfiles/ms/icons/blue-dot.png',
+##                'lat': str(lats[5]),
+##                'lng': str(lons[5]),
+##                'infobox': str(names[5]) + ', ' + str(stars[5]) + ', ' + str(address[5])
+##            },
+##            {
+##                'icon': '//maps.google.com/mapfiles/ms/icons/blue-dot.png',
+##                'lat': str(lats[6]),
+##                'lng': str(lons[6]),
+##                'infobox': str(names[6]) + ', ' + str(stars[6]) + ', ' + str(address[6])
+##            },
+##            {
+##                'icon': '//maps.google.com/mapfiles/ms/icons/blue-dot.png',
+##                'lat': str(lats[7]),
+##                'lng': str(lons[7]),
+##                'infobox': str(names[7]) + ', ' + str(stars[7]) + ', ' + str(address[7])
+##            },
+##            {
+##                'icon': '//maps.google.com/mapfiles/ms/icons/blue-dot.png',
+##                'lat': str(lats[8]),
+##                'lng': str(lons[8]),
+##                'infobox': str(names[8]) + ', ' + str(stars[8]) + ', ' + str(address[8])
+##            },
             {
                 'icon': '//maps.google.com/mapfiles/ms/icons/yellow-dot.png',
                 'lat': str(user_data[7]),
@@ -307,7 +333,7 @@ def fullmap():
         # maptype = "TERRAIN",
         zoom="2"
     )
-    return render_template('example_fullmap.html', fullmap=fullmap)
+    return render_template('map.html', fullmap=fullmap)
 
 
 ##def mapview():
@@ -351,4 +377,4 @@ def map_locations(lats, lons, names, stars, full_address):
 ##    print "Best guess = " + best_guesses[0][0]
 ##    map_locations(lons, lats, names, stars, full_address)
 
-app.run(host='0.0.0.0', port=5000, use_reloader=True)
+app.run(host='0.0.0.0', port=5000, use_reloader=True, threaded=True)

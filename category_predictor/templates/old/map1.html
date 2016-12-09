@@ -1,0 +1,311 @@
+
+        <!DOCTYPE html>
+        <head>
+            
+        
+            <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+        
+            
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.js"></script>
+        
+        
+        
+            
+        
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        
+        
+        
+            
+        
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+        
+        
+        
+            
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.min.js"></script>
+        
+        
+        
+            
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.4.0/leaflet.markercluster-src.js"></script>
+        
+        
+        
+            
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.4.0/leaflet.markercluster.js"></script>
+        
+        
+        
+            
+        
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.css" />
+        
+        
+        
+            
+        
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+        
+        
+        
+            
+        
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css" />
+        
+        
+        
+            
+        
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" />
+        
+        
+        
+            
+        
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css" />
+        
+        
+        
+            
+        
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.4.0/MarkerCluster.Default.css" />
+        
+        
+        
+            
+        
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.4.0/MarkerCluster.css" />
+        
+        
+        
+            
+        
+            <link rel="stylesheet" href="https://raw.githubusercontent.com/python-visualization/folium/master/folium/templates/leaflet.awesome.rotate.css" />
+        
+        
+        
+            
+            <style>
+
+            html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+                }
+
+            #map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+            
+        
+            
+            <style> #map_fbb2dc1f006e48858266443a3b3223d7 {
+                position : relative;
+                width : 100.0%;
+                height: 100.0%;
+                left: 0.0%;
+                top: 0.0%;
+                }
+            </style>
+        
+        
+            
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.4.0/leaflet.markercluster.js"></script>
+        
+        
+        
+            
+        
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.4.0/MarkerCluster.css" />
+        
+        
+        
+            
+        
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.4.0/MarkerCluster.Default.css" />
+        
+        
+        
+        
+        </head>
+        <body>
+            
+        
+            
+            <div class="folium-map" id="map_fbb2dc1f006e48858266443a3b3223d7" ></div>
+        
+        
+        
+        </body>
+        <script>
+            
+        
+            
+
+            var southWest = L.latLng(-90, -180);
+            var northEast = L.latLng(90, 180);
+            var bounds = L.latLngBounds(southWest, northEast);
+
+            var map_fbb2dc1f006e48858266443a3b3223d7 = L.map('map_fbb2dc1f006e48858266443a3b3223d7', {
+                                           center:[42.7392534768,-71.1039495514],
+                                           zoom: 2,
+                                           maxBounds: bounds,
+                                           layers: [],
+                                           crs: L.CRS.EPSG3857
+                                         });
+            
+        
+        
+            
+            var tile_layer_cfa90b2cb9b54477bae69117faf24d90 = L.tileLayer(
+                'https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png',
+                {
+                    maxZoom: 18,
+                    minZoom: 1,
+                    attribution: '(c) <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors (c) <a href="http://cartodb.com/attributions">CartoDB</a>, CartoDB <a href ="http://cartodb.com/attributions">attributions</a>',
+                    detectRetina: false
+                    }
+                ).addTo(map_fbb2dc1f006e48858266443a3b3223d7);
+
+        
+        
+            
+                var marker_cluster_de8987655714437a9ad727b3ee3122ae = L.markerClusterGroup();
+                map_fbb2dc1f006e48858266443a3b3223d7.addLayer(marker_cluster_de8987655714437a9ad727b3ee3122ae);
+            
+        
+            
+
+            var marker_8a0d7cf3093641fa897574fb23329b84 = L.marker(
+                [55.9576443842,-3.17092135678],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(marker_cluster_de8987655714437a9ad727b3ee3122ae);
+            
+        
+            
+            var popup_823f0a6133fc4949a394b340c8a528e3 = L.popup({maxWidth: '300'});
+
+            
+                var html_6ef9a3ea15af4bfcb8dd1c7bf67ddaad = $('         <div id="html_6ef9a3ea15af4bfcb8dd1c7bf67ddaad"                 style="width: 100.0%; height: 100.0%;">                 Ruchi Tandoori Takeaway,  3 London Road Edinburgh EH7 5AP,  Rating = 5.0</div>                 ')[0];
+                popup_823f0a6133fc4949a394b340c8a528e3.setContent(html_6ef9a3ea15af4bfcb8dd1c7bf67ddaad);
+            
+
+            marker_8a0d7cf3093641fa897574fb23329b84.bindPopup(popup_823f0a6133fc4949a394b340c8a528e3);
+
+            
+        
+        
+            
+
+            var marker_80e1a212fb4a4b08b439a817d027cc92 = L.marker(
+                [43.4400042,-80.5273128],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(marker_cluster_de8987655714437a9ad727b3ee3122ae);
+            
+        
+            
+            var popup_ed83aab884274ae09152666d44dd62e4 = L.popup({maxWidth: '300'});
+
+            
+                var html_4c4fed29607c4561b403a98cf69ed925 = $('         <div id="html_4c4fed29607c4561b403a98cf69ed925"                 style="width: 100.0%; height: 100.0%;">                 Ali&#39;s Tandoori Junction,  101 Hazelglen Drive Kitchener, ON N2M 5A2,  Rating = 4.5</div>                 ')[0];
+                popup_ed83aab884274ae09152666d44dd62e4.setContent(html_4c4fed29607c4561b403a98cf69ed925);
+            
+
+            marker_80e1a212fb4a4b08b439a817d027cc92.bindPopup(popup_ed83aab884274ae09152666d44dd62e4);
+
+            
+        
+        
+            
+
+            var marker_b0113b53713c4573976b7cf4ad7cba1a = L.marker(
+                [40.4535048,-80.0168923],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(marker_cluster_de8987655714437a9ad727b3ee3122ae);
+            
+        
+            
+            var popup_3ec6ded80d254f1aa5dd89a8f572a0b4 = L.popup({maxWidth: '300'});
+
+            
+                var html_35f92a02c0894e9da31c1ddba8c23023 = $('         <div id="html_35f92a02c0894e9da31c1ddba8c23023"                 style="width: 100.0%; height: 100.0%;">                 Hoi Polloi: Coffeehouse and Vegetarian Cafe,  1100 Galveston Ave North Side Pittsburgh, PA 15233,  Rating = 5.0</div>                 ')[0];
+                popup_3ec6ded80d254f1aa5dd89a8f572a0b4.setContent(html_35f92a02c0894e9da31c1ddba8c23023);
+            
+
+            marker_b0113b53713c4573976b7cf4ad7cba1a.bindPopup(popup_3ec6ded80d254f1aa5dd89a8f572a0b4);
+
+            
+        
+        
+            
+
+            var marker_1c315644ad8f4b478015296b3a35b2d5 = L.marker(
+                [40.4535048,-80.0168923],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(marker_cluster_de8987655714437a9ad727b3ee3122ae);
+            
+        
+            
+            var popup_86045329ee0e4a0f8904b0cea317d416 = L.popup({maxWidth: '300'});
+
+            
+                var html_28282b67c9d1460bb284f2f6a2f91a3b = $('         <div id="html_28282b67c9d1460bb284f2f6a2f91a3b"                 style="width: 100.0%; height: 100.0%;">                 Hoi Polloi: Coffeehouse and Vegetarian Cafe,  1100 Galveston Ave North Side Pittsburgh, PA 15233,  Rating = 5.0</div>                 ')[0];
+                popup_86045329ee0e4a0f8904b0cea317d416.setContent(html_28282b67c9d1460bb284f2f6a2f91a3b);
+            
+
+            marker_1c315644ad8f4b478015296b3a35b2d5.bindPopup(popup_86045329ee0e4a0f8904b0cea317d416);
+
+            
+        
+        
+            
+
+            var marker_12f90d7b3f7a42fa8360c91d46290c2a = L.marker(
+                [33.3916092,-111.787729],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(marker_cluster_de8987655714437a9ad727b3ee3122ae);
+            
+        
+            
+            var popup_71ffd6aa048d4d36b2ff38f05b40c08a = L.popup({maxWidth: '300'});
+
+            
+                var html_8a50b7683f4c4e488a0d83f17e29f98a = $('         <div id="html_8a50b7683f4c4e488a0d83f17e29f98a"                 style="width: 100.0%; height: 100.0%;">                 India Oven,  1315 S Gilbert Rd Mesa, AZ 85204,  Rating = 4.5</div>                 ')[0];
+                popup_71ffd6aa048d4d36b2ff38f05b40c08a.setContent(html_8a50b7683f4c4e488a0d83f17e29f98a);
+            
+
+            marker_12f90d7b3f7a42fa8360c91d46290c2a.bindPopup(popup_71ffd6aa048d4d36b2ff38f05b40c08a);
+
+            
+        
+        
+        
+        </script>
+        

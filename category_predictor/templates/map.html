@@ -1,311 +1,40 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+            <meta charset="utf-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <title>Flask Google Maps Full Map Example</title>
+            <link rel="stylesheet" href="">
+            {{fullmap.js}}
 
-        <!DOCTYPE html>
-        <head>
-            
-        
-            <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-        
-            
-        
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.js"></script>
-        
-        
-        
-            
-        
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-        
-        
-        
-            
-        
-            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-        
-        
-        
-            
-        
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.min.js"></script>
-        
-        
-        
-            
-        
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.4.0/leaflet.markercluster-src.js"></script>
-        
-        
-        
-            
-        
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.4.0/leaflet.markercluster.js"></script>
-        
-        
-        
-            
-        
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.css" />
-        
-        
-        
-            
-        
-            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
-        
-        
-        
-            
-        
-            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css" />
-        
-        
-        
-            
-        
-            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" />
-        
-        
-        
-            
-        
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css" />
-        
-        
-        
-            
-        
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.4.0/MarkerCluster.Default.css" />
-        
-        
-        
-            
-        
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.4.0/MarkerCluster.css" />
-        
-        
-        
-            
-        
-            <link rel="stylesheet" href="https://raw.githubusercontent.com/python-visualization/folium/master/folium/templates/leaflet.awesome.rotate.css" />
-        
-        
-        
-            
             <style>
 
-            html, body {
-                width: 100%;
-                height: 100%;
-                margin: 0;
-                padding: 0;
-                }
+      #floating-panel {
+  position: absolute;
+  top: 10px;
+  left: 25%;
+  z-index: 5;
+  background-color: #fff;
+  padding: 5px;
+  border: 1px solid #999;
+  text-align: center;
+  font-family: 'Roboto','sans-serif';
+  line-height: 30px;
+  padding-left: 10px;
+}
+#floating-panel {
+  margin-left: -100px;
+}
+</style>
+    </head>
+    <body>
+        <h1>Flask Google Maps Full Map Example</h1>
+        <!-- <div id="floating-panel">
+          <input type="button" value="Toggle Street View" onclick="toggleStreetView();"></input>
+        </div> -->
+        <div>
+        {{ fullmap.html }}
+      </div>
 
-            #map {
-                position:absolute;
-                top:0;
-                bottom:0;
-                right:0;
-                left:0;
-                }
-            </style>
-            
-        
-            
-            <style> #map_f1c4f033818144f5890a2358fc43ed68 {
-                position : relative;
-                width : 100.0%;
-                height: 100.0%;
-                left: 0.0%;
-                top: 0.0%;
-                }
-            </style>
-        
-        
-            
-        
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.4.0/leaflet.markercluster.js"></script>
-        
-        
-        
-            
-        
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.4.0/MarkerCluster.css" />
-        
-        
-        
-            
-        
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.4.0/MarkerCluster.Default.css" />
-        
-        
-        
-        
-        </head>
-        <body>
-            
-        
-            
-            <div class="folium-map" id="map_f1c4f033818144f5890a2358fc43ed68" ></div>
-        
-        
-        
-        </body>
-        <script>
-            
-        
-            
-
-            var southWest = L.latLng(-90, -180);
-            var northEast = L.latLng(90, 180);
-            var bounds = L.latLngBounds(southWest, northEast);
-
-            var map_f1c4f033818144f5890a2358fc43ed68 = L.map('map_f1c4f033818144f5890a2358fc43ed68', {
-                                           center:[40.16909846,-84.2367970771],
-                                           zoom: 2,
-                                           maxBounds: bounds,
-                                           layers: [],
-                                           crs: L.CRS.EPSG3857
-                                         });
-            
-        
-        
-            
-            var tile_layer_c80354e8735144dd8b76413f2a28cb62 = L.tileLayer(
-                'https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png',
-                {
-                    maxZoom: 18,
-                    minZoom: 1,
-                    attribution: '(c) <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors (c) <a href="http://cartodb.com/attributions">CartoDB</a>, CartoDB <a href ="http://cartodb.com/attributions">attributions</a>',
-                    detectRetina: false
-                    }
-                ).addTo(map_f1c4f033818144f5890a2358fc43ed68);
-
-        
-        
-            
-                var marker_cluster_6477e8994aa8417cbc413091fdc0f895 = L.markerClusterGroup();
-                map_f1c4f033818144f5890a2358fc43ed68.addLayer(marker_cluster_6477e8994aa8417cbc413091fdc0f895);
-            
-        
-            
-
-            var marker_bf3f5d462cf44e609b0c0b729cdd84cb = L.marker(
-                [36.0612766,-3.17092135678],
-                {
-                    icon: new L.Icon.Default()
-                    }
-                )
-                .addTo(marker_cluster_6477e8994aa8417cbc413091fdc0f895);
-            
-        
-            
-            var popup_a539920fa1b04909a9c3ea531e8a6cff = L.popup({maxWidth: '300'});
-
-            
-                var html_ea30fdab8f7f4b79929eb9cce0f2b7fc = $('         <div id="html_ea30fdab8f7f4b79929eb9cce0f2b7fc"                 style="width: 100.0%; height: 100.0%;">                 Costa Del Sol At Sunset Station,  1301 W Sunset Road Henderson, NV 89014,  Rating = 5.0</div>                 ')[0];
-                popup_a539920fa1b04909a9c3ea531e8a6cff.setContent(html_ea30fdab8f7f4b79929eb9cce0f2b7fc);
-            
-
-            marker_bf3f5d462cf44e609b0c0b729cdd84cb.bindPopup(popup_a539920fa1b04909a9c3ea531e8a6cff);
-
-            
-        
-        
-            
-
-            var marker_b908c97f77ab44a2ac431464c7c217b3 = L.marker(
-                [33.3990049,-80.5273128],
-                {
-                    icon: new L.Icon.Default()
-                    }
-                )
-                .addTo(marker_cluster_6477e8994aa8417cbc413091fdc0f895);
-            
-        
-            
-            var popup_0fe20b96631d44c3be60d644833fb857 = L.popup({maxWidth: '300'});
-
-            
-                var html_6f97eb1243554fb8bbe94bf6b542160e = $('         <div id="html_6f97eb1243554fb8bbe94bf6b542160e"                 style="width: 100.0%; height: 100.0%;">                 Dairy Queen,  5217 S Central Ave Phoenix, AZ 85040,  Rating = 5.0</div>                 ')[0];
-                popup_0fe20b96631d44c3be60d644833fb857.setContent(html_6f97eb1243554fb8bbe94bf6b542160e);
-            
-
-            marker_b908c97f77ab44a2ac431464c7c217b3.bindPopup(popup_0fe20b96631d44c3be60d644833fb857);
-
-            
-        
-        
-            
-
-            var marker_c8ba6e5dab2a4e59b95bbbcccbaa0a4d = L.marker(
-                [45.5329354,-80.0168923],
-                {
-                    icon: new L.Icon.Default()
-                    }
-                )
-                .addTo(marker_cluster_6477e8994aa8417cbc413091fdc0f895);
-            
-        
-            
-            var popup_0cc0e23b4d184ff3aac070ebd3bb6a93 = L.popup({maxWidth: '300'});
-
-            
-                var html_66e25ceadc9e4422bedce6c7b3be479c = $('         <div id="html_66e25ceadc9e4422bedce6c7b3be479c"                 style="width: 100.0%; height: 100.0%;">                 Patisserie Polonaise Wawel,  2543 Rue Ontario E Ville-Marie Montral, QC H2K 1W5,  Rating = 5.0</div>                 ')[0];
-                popup_0cc0e23b4d184ff3aac070ebd3bb6a93.setContent(html_66e25ceadc9e4422bedce6c7b3be479c);
-            
-
-            marker_c8ba6e5dab2a4e59b95bbbcccbaa0a4d.bindPopup(popup_0cc0e23b4d184ff3aac070ebd3bb6a93);
-
-            
-        
-        
-            
-
-            var marker_80012c98133a402a801c9b752721e7d4 = L.marker(
-                [40.3520269,-80.0168923],
-                {
-                    icon: new L.Icon.Default()
-                    }
-                )
-                .addTo(marker_cluster_6477e8994aa8417cbc413091fdc0f895);
-            
-        
-            
-            var popup_3864afb61e6140f6899630082ab9416b = L.popup({maxWidth: '300'});
-
-            
-                var html_1eecf31ec785476fbbf6609223089067 = $('         <div id="html_1eecf31ec785476fbbf6609223089067"                 style="width: 100.0%; height: 100.0%;">                 Minerva Bakery,  927 5th Ave McKeesport, PA 15132,  Rating = 5.0</div>                 ')[0];
-                popup_3864afb61e6140f6899630082ab9416b.setContent(html_1eecf31ec785476fbbf6609223089067);
-            
-
-            marker_80012c98133a402a801c9b752721e7d4.bindPopup(popup_3864afb61e6140f6899630082ab9416b);
-
-            
-        
-        
-            
-
-            var marker_e8447e83646d4b9cb1c48f3fd6505baa = L.marker(
-                [45.5002485,-111.787729],
-                {
-                    icon: new L.Icon.Default()
-                    }
-                )
-                .addTo(marker_cluster_6477e8994aa8417cbc413091fdc0f895);
-            
-        
-            
-            var popup_a5266fde1e474514a9350d3642c116ce = L.popup({maxWidth: '300'});
-
-            
-                var html_30fb6a9a9d2e410cbc86c6c583845d86 = $('         <div id="html_30fb6a9a9d2e410cbc86c6c583845d86"                 style="width: 100.0%; height: 100.0%;">                 Twisted Burger,  205 Rue Saint Louis Saint-Lambert, QC J4R,  Rating = 5.0</div>                 ')[0];
-                popup_a5266fde1e474514a9350d3642c116ce.setContent(html_30fb6a9a9d2e410cbc86c6c583845d86);
-            
-
-            marker_e8447e83646d4b9cb1c48f3fd6505baa.bindPopup(popup_a5266fde1e474514a9350d3642c116ce);
-
-            
-        
-        
-        
-        </script>
-        
+    </body>
+</html>
