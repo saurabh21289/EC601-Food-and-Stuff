@@ -5,11 +5,13 @@
 ###How to run:
 ####The project files are inside the "ML Engine" folder
 
-Requirements: python 2.7.12 with sqlite
+#####Requirements: 
 
-Link to dataset: https://www.dropbox.com/s/v8ko9iy8ot7in7f/dataset.zip?dl=0
+1. python 2.7.12 with sqlite
 
-This zip file contains the file "linked_cate_name.json". Make sure you change the path inside server.py for the file "linked_cate_name.json" to wherever you download it.
+2. Dataset (https://www.dropbox.com/s/v8ko9iy8ot7in7f/dataset.zip?dl=0)
+
+Note: The zip file above contains "linked_cate_name.json". Make sure you change the path inside server.py wherever you download it.
 
 Step 1: Setup python environment
 ```
