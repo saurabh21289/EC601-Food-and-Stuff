@@ -9,7 +9,7 @@
 
 2. Dataset (https://www.dropbox.com/s/v8ko9iy8ot7in7f/dataset.zip?dl=0)
 
-Note: The zip file above contains "linked_cate_name.json". Make sure you change the path inside server.py wherever you download it.
+Note: The zip file above contains "linked_cate_name.json". Make sure you change the path inside server.py to wherever you download it.
 
 #####Step 1: Setup python environment
 ```
