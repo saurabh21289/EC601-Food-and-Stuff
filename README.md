@@ -37,4 +37,4 @@ python server.py
 ./start.sh
 ```
 
-####Feel free yo reach out at ssingh02@bu.edu if you have any trouble running this application.
+####Feel free to reach out at ssingh02@bu.edu if you have any trouble running this application.
