@@ -1,5 +1,3 @@
-[![Build Status](https://travis-ci.org/Yelp/dataset-examples.svg)](https://travis-ci.org/Yelp/dataset-examples)
-
 #Food and Stuff (EC601)
 ##v0.4 
 ###How to run:
