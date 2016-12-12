@@ -1,0 +1,167 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+    <head>
+        <title>Food & Stuff</title>
+       <link rel="stylesheet" media="screen" href ="static/css/bootstrap.min.css">
+       <link rel="stylesheet" href="static/css/bootstrap-theme.min.css">
+       <link href='//fonts.googleapis.com/css?family=Aref+Ruqaa' rel='stylesheet'>
+	<link rel="stylesheet" href="static/css/introjs.min.css">
+	<script type="text/javascript" src="static/js/intro.min.js"></script>
+	<script src="jquery-3.1.1.min.js"></script>
+
+
+       <meta name="viewport" content = "width=device-width, initial-scale=1.0">
+       <style>
+          iframe#frame2 {
+              border-radius: 2px;
+              -webkit-border-radius: 2px;
+              -o-border-radius: 2px;
+          }
+          video#bgvid {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -100;
+            -ms-transform: translateX(-50%) translateY(-50%);
+            -moz-transform: translateX(-50%) translateY(-50%);
+            -webkit-transform: translateX(-50%) translateY(-50%);
+            transform: translateX(-50%) translateY(-50%);
+            background: url('static/images/white.jpg') no-repeat;
+            background-size: cover;
+        }
+        video#bgvid {
+            transition: 1s opacity;
+        }
+        .stopfade { opacity: .5; }
+
+        label#index {
+          color:white;
+          -webkit-text-stroke: 0.1px grey;
+          /*font-family: 'Aref Ruqaa', serif;*/
+          font-size: 20px;
+        }
+
+      @media (max-width: 767px) {
+        label#index {
+          color:black;
+          /*-webkit-text-stroke: 0.1px grey;*/
+          /*font-family: 'Aref Ruqaa', serif;*/
+          font-size: 20px;
+        }
+        .fullscreen-bg {
+          background: url('static/images/white.jpg') center center / cover no-repeat;
+        }
+
+        .fullscreen-bg__video {
+          display: none;
+        }
+      }
+      div#frm *{
+        display:inline;
+        /*float:left;*/
+        margin-bottom:10px;
+      }
+
+</style>
+	<script type="text/javascript">
+	document.addEventListener('DOMContentLoaded',function(){
+	  /*Your chartist initialization code here*/
+		introJs().start();
+		introJs().addHints();
+	$('html, body').animate({
+   	 scrollTop: $("#frame1").offset().top
+	}, 1000);
+
+	});
+
+	
+
+	</script>
+    </head>
+    <body>
+
+      <video playsinline autoplay muted loop id="bgvid">
+          <source src="static/video/food1.mp4" type="video/mp4">
+      </video>
+
+<div class="container" align="center">
+<h2><a href="{{ url_for('foodandstuff') }}"><img src="static/images/logo.png" width="240" height="206" alt="logo"></a></h2>
+</div>
+
+{% with names = get_flashed_messages(category_filter=["name"]) %}
+{% if names %}
+<div class="alert-message block-message error">
+  <a class="close" href="#">×</a>
+  <ul>
+    {%- for msg in names %}
+    <li>{{ msg }}</li>
+    {% endfor -%}
+  </ul>
+</div>
+{% endif %}
+{% endwith %}
+
+
+<div class="container" align="left">
+
+
+
+  <div id="frm">
+    <form  action="" method="post" role="form" align="left">
+      {{ form.csrf }}
+      <div class="form-group">
+        <label id ="index" for="food">Enter the food item you're looking for</label>
+        <input type="text" class="form-control" id="food" name="food" placeholder="eg: Pad Thai, Sushi, Indian Curry" data-hint='Entering humane queries such as "tasty mexican" or "amorous cake" will yield better resutls!'>
+      </div>
+      <button type="submit" class="btn btn-success" >Submit</button>
+    </form>
+    <form action="/logout" method="">
+      <button type="submit" class="btn btn-danger" >Logout</button>
+    </form>
+  </div>
+
+
+  <br>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6" align = "center">
+                          <iframe id="frame1" height="400" width="440" src="chart" frameBorder="0" align="center" scrolling="no" data-intro='Restaurants with bigger slices have a better chance of pleasing your taste buds.'></iframe>
+                    </div>
+                    <div class="col-sm-6" align = "center">
+                          <iframe id="frame2" height="400" width="440" src="map" style="border:2px solid grey;"  align="center" scrolling="no" data-hint='You can drag the human figure onto the map to enter street-view to check out the surroundings' data-intro='Your location appears in yellow. Top restaurant appears in green and other restaurants in blue.'></iframe>
+                    </div>
+                </div>
+            </div>
+
+            <br>
+        {% for category, message in messages %}
+            {% if "Error" not in message[1]: %}
+                <div class="alert alert-info">
+                  {{ 'Category predicted: ' + category + '. ' + message }}
+                  <!-- {%for m in message%}
+                  <p>{{m}}</p>
+                  {%endfor%} -->
+                <!-- {{ message[1] }} -->
+                </div>
+            {% endif %}
+
+            {% if "Error" in message[1]: %}
+                <div class="alert alert-warning">
+                {{ message[1] }}
+                </div>
+            {% endif %}
+        {% endfor %}
+            {% endif %}
+        {% endwith %}
+</div>
+<br>
+</div>
+</div>
+</body>
+</html>
