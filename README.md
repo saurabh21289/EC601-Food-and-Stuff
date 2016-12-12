@@ -13,28 +13,28 @@
 
 Note: The zip file above contains "linked_cate_name.json". Make sure you change the path inside server.py wherever you download it.
 
-Step 1: Setup python environment
+#####Step 1: Setup python environment
 ```
 pip install Flask-SqlAlchemy json re wtforms flask flask_googlemaps
 ```
 
-Step 2: Setup database
+#####Step 2: Setup database
 ```
 python tabledef.py
 ```
 
-Populate database with dummy data
+######Populate database with dummy data
 ```
 python dummy.py
 ```
 
-Step 3: Runing the application
+#####Step 3: Runing the application
 
-For Windows 10, you'll have to run without NGINX: 
+######For Windows 10, you'll have to run without NGINX: 
 ```
 python server.py
 ```
-For Linux: 
+######For Linux: 
 ```
 ./start.sh
 ```
