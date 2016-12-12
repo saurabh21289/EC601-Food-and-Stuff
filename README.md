@@ -1,54 +1,40 @@
 [![Build Status](https://travis-ci.org/Yelp/dataset-examples.svg)](https://travis-ci.org/Yelp/dataset-examples)
 
-Here are some infographics to represent the predictions:
+#Food and Stuff (EC601)
+##v0.4 
+###How to run:
+####The project files are inside the "ML Engine" folder
 
-<p align="center">
-  <img src="https://github.com/saurabh21289/dataset-examples/blob/master/Charts/Chicken%20wings.png" width="350"/>
-  <img src="https://github.com/saurabh21289/dataset-examples/blob/master/Charts/Sushi.png" width="350"/>
-  <img src="https://github.com/saurabh21289/dataset-examples/blob/master/Charts/Noodles.png" width="350"/>
-</p>
+Requirements: python 2.7.12 with sqlite
 
-I am using the Yelp academic dataset with reviews. It's structure is given below
+Link to dataset: https://www.dropbox.com/s/v8ko9iy8ot7in7f/dataset.zip?dl=0
 
-```json
-{
-    'type': 'business',
-    'business_id': (encrypted business id),
-    'name': (business name),
-    'neighborhoods': [(hood names)],
-    'full_address': (localized address),
-    'city': (city),
-    'state': (state),
-    'latitude': latitude,
-    'longitude': longitude,
-    'stars': (star rating, rounded to half - stars),
-    'review_count': review count,
-    'categories': [(localized category names)]
-    'open': True / False(corresponds to closed, not business hours),
-    'hours': {
-        (day_of_week): {
-            'open': (HH: MM),
-            'close': (HH: MM)
-        },
-        ...
-    },
-    'attributes': {
-        (attribute_name): (attribute_value),
-        ...
-    },
-}
+This zip file contains the file "linked_cate_name.json". Make sure you change the path inside server.py for the file "linked_cate_name.json" to wherever you download it.
+
+Step 1: Setup python environment
+```
+pip install Flask-SqlAlchemy json re wtforms flask flask_googlemaps
 ```
 
-Fields which are of interest are business_id, name, city, stars, review_count, categories. Their dtypes are below:
-
-```json
-name             object
-stars           float64
-review_count      int64
-full_address     object
-city             object
-state            object
-latitude        float64
-longitude       float64
-categories       object
+Step 2: Setup database
 ```
+python tabledef.py
+```
+
+Populate database with dummy data
+```
+python dummy.py
+```
+
+Step 3: Runing the application
+
+For Windows 10, you'll have to run without NGINX: 
+```
+python server.py
+```
+For Linux: 
+```
+./start.sh
+```
+
+####Feel free yo reach out at ssingh02@bu.edu if you have any trouble running this application.
