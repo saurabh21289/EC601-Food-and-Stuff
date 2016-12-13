@@ -9,7 +9,7 @@
 
 2. Extract dataset file (linked_cate_name.json) inside the "ML Engine Folder" 
 
-  Links to dataset: https://github.com/saurabh21289/EC601-Food-and-Stuff/blob/master/linked_cate_name.zip -or- https://www.dropbox.com/s/v8ko9iy8ot7in7f/dataset.zip?dl=0
+  Link to dataset: https://github.com/saurabh21289/EC601-Food-and-Stuff/raw/master/linked_cate_name.zip -or- https://www.dropbox.com/s/v8ko9iy8ot7in7f/dataset.zip?dl=0
 
 Note: The zip file above contains "linked_cate_name.json" which is our pre-processed dataset. Ensure that you place this file inside the "ML Engine" folder so that server.py can locate it.
 
