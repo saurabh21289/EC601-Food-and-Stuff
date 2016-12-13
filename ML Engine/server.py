@@ -200,7 +200,7 @@ def foodandstuff():
             
         else:
             result={}
-            with open('../../dataset/linked_cate_name.json','r') as infile:
+            with open('linked_cate_name.json','r') as infile:
                 for lines in infile.readlines():
                     temp = json.loads(lines)
                     result[temp[0]]=temp[1]
