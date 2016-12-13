@@ -383,4 +383,4 @@ def fullmap():
 
 #application.run(host='0.0.0.0', port=5000, use_reloader=True, threaded=True)
 if __name__ == "__main__":
-    application.run(host='0.0.0.0', use_reloader=True, threaded=True)
+    application.run(host='0.0.0.0', port=5000, use_reloader=True, threaded=True)
