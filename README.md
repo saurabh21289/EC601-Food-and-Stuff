@@ -28,7 +28,7 @@ python tabledef.py
 python dummy.py
 ```
 
-#####Step 3: Runing the application
+#####Step 3: Running the application
 
 ######For Windows 10, you'll have to run without NGINX: 
 ```
@@ -38,5 +38,5 @@ python server.py
 ```
 ./start.sh
 ```
-
+#####If you want to host on a different port, change inside `server.py` for Windows and in `start.sh`.
 ####Feel free to reach out at ssingh02@bu.edu if you have any trouble running this application.
