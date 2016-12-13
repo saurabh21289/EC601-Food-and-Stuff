@@ -41,5 +41,5 @@ python server.py
 ```
 ./start.sh
 ```
-#####The server runs on `http://localhost:5000` by default. If you want to host on a different port, change inside `server.py` for Windows and in `start.sh` for Linux.
+#####The server runs on `http://localhost:5000` by default. If you want to host on a different port, change inside `server.py` for Windows/Linux and in `start.sh` for Linux with NGINX.
 ####Feel free to reach out at ssingh02@bu.edu if you have any trouble running this application.
