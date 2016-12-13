@@ -34,9 +34,9 @@ python dummy.py
 ```
 python server.py
 ```
-######For Linux (may need sudo for Linux to host on port 80): 
+######For Linux: 
 ```
 ./start.sh
 ```
-#####If you want to host on a different port, change inside `server.py` for Windows and in `start.sh`.
+##### The server runs on `http://localhost:5000` by default. If you want to host on a different port, change inside `server.py` for Windows and in `start.sh`.
 ####Feel free to reach out at ssingh02@bu.edu if you have any trouble running this application.
