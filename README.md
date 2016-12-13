@@ -1,5 +1,5 @@
 #Food and Stuff (EC601)
-##v0.4 
+##Demo v0.4 is live at http://foodandstuff.us.to:8080
 ###How to run:
 ####The project files are inside the "ML Engine" folder
 
