@@ -13,7 +13,7 @@ Note: The zip file above contains "linked_cate_name.json" which is our pre-proce
 
 #####Step 1: Setup python environment
 ```
-pip install Flask-SqlAlchemy re wtforms flask flask_googlemaps
+pip install Flask-SqlAlchemy wtforms flask flask_googlemaps
 ```
 
 #####Step 2: Setup database
