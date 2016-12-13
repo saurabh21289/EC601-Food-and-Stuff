@@ -14,6 +14,8 @@
 
 Note: The zip file above contains "linked_cate_name.json" which is our pre-processed dataset. Ensure that you place this file inside the "ML Engine" folder so that server.py can locate it.
 
+#####Compatibility: Windows 8.1/10 and Ubuntu 14.04. Also tested on macOS.
+
 #####Step 1: Setup python environment (may need sudo on Linux)
 ```
 pip install Flask-SqlAlchemy wtforms flask flask_googlemaps
