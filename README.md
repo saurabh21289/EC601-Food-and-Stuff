@@ -11,7 +11,7 @@
 
 Note: The zip file above contains "linked_cate_name.json" which is our pre-processed dataset. Make sure you change the path inside server.py to wherever you download it.
 
-#####Step 1: Setup python environment
+#####Step 1: Setup python environment (may need sudo on Linux)
 ```
 pip install Flask-SqlAlchemy wtforms flask flask_googlemaps
 ```
@@ -32,7 +32,7 @@ python dummy.py
 ```
 python server.py
 ```
-######For Linux: 
+######For Linux (may need sudo for Linux to host on port 80): 
 ```
 ./start.sh
 ```
