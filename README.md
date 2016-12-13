@@ -16,12 +16,12 @@ Note: The zip file above contains "linked_cate_name.json" which is our pre-proce
 pip install Flask-SqlAlchemy wtforms flask flask_googlemaps
 ```
 
-#####Step 2: Setup database
+#####Step 2: Setup database (may need sudo for Linux)
 ```
 python tabledef.py
 ```
 
-######Populate database with dummy data
+######Populate database with dummy data (may need sudo for Linux)
 ```
 python dummy.py
 ```
