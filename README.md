@@ -7,7 +7,7 @@
 
 1. python 2.7.12 with sqlite
 
-2. Dataset (https://www.dropbox.com/s/v8ko9iy8ot7in7f/dataset.zip?dl=0)
+2. Extract dataset inside the "ML Engine Folder" (https://github.com/saurabh21289/EC601-Food-and-Stuff/blob/master/linked_cate_name.zip -or- https://www.dropbox.com/s/v8ko9iy8ot7in7f/dataset.zip?dl=0)
 
 Note: The zip file above contains "linked_cate_name.json" which is our pre-processed dataset. Make sure you change the path inside server.py to wherever you download it.
 
