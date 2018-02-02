@@ -1,5 +1,5 @@
 #Food and Stuff (EC601)
-##Demo v0.4 is live at <a href="http://foodandstuff.us.to:8080" target="_blank">http://foodandstuff.us.to:8080</a>
+##Demo v0.4 is live at <a href="http://foodandstuff.us.to:4000" target="_blank">http://foodandstuff.us.to:8080</a>
 #####Technologies used are `Python 2.7.12 with SQLite, Mrjob, Flask_googlemaps, Pandas, NumPy, Flask with NGINX, Html5, JavaScript, Bootstrap, Jinja2, Google maps API, Charts.js, SQLAlchemy`
 
 ###How to run:
